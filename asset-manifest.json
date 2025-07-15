@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ajithkumar/static/css/main.e6c13ad2.css",
-    "main.js": "/ajithkumar/static/js/main.eb2b6a23.js",
+    "main.js": "/ajithkumar/static/js/main.ff85f1c0.js",
     "static/js/453.9e70183b.chunk.js": "/ajithkumar/static/js/453.9e70183b.chunk.js",
     "static/media/profile.jpg": "/ajithkumar/static/media/profile.e208fb82c41aa75f46ad.jpg",
     "index.html": "/ajithkumar/index.html",
     "main.e6c13ad2.css.map": "/ajithkumar/static/css/main.e6c13ad2.css.map",
-    "main.eb2b6a23.js.map": "/ajithkumar/static/js/main.eb2b6a23.js.map",
+    "main.ff85f1c0.js.map": "/ajithkumar/static/js/main.ff85f1c0.js.map",
     "453.9e70183b.chunk.js.map": "/ajithkumar/static/js/453.9e70183b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.eb2b6a23.js"
+    "static/js/main.ff85f1c0.js"
   ]
 }

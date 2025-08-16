@@ -52,10 +52,10 @@ const Resume = () => {
   };
 
   const handleDownloadResume = () => {
-    // The PDF file should be placed in public/assets/docs/resume.pdf
+    // The PDF file should be placed in public/assets/docs/AJITH_KUMAR_K_K_RESUME.pdf
     const link = document.createElement('a');
-    link.href = '/assets/docs/Ajith_Kumar.pdf';
-    link.download = 'Ajith_Kumar.pdf'; // Name that will appear when downloading
+    link.href = `${process.env.PUBLIC_URL}/assets/docs/AJITH_KUMAR_K_K_RESUME.pdf`;
+    link.download = 'AJITH_KUMAR_K_K_RESUME.pdf'; // Name that will appear when downloading
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

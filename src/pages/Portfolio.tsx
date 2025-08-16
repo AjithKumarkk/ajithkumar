@@ -118,13 +118,6 @@ Technical Stack
     ]
   },
   {
-    title: 'Match-3 Game',
-    description: 'A colorful and addictive match-3 puzzle game with unique power-ups, special combinations, and progressive difficulty levels. Features engaging gameplay mechanics and vibrant visuals.',
-    image: 'https://i.imgur.com/YOUR_IMAGE_ID.jpg',
-    technologies: ['Unity', 'C#', 'DOTween', 'PlayFab', 'Firebase'],
-    platform: 'Mobile'
-  },
-  {
     title: 'Superdash - No Wifi Games',
     description: 'Superdash Offline, a hyper-casual mobile game featuring vibrant visuals and intuitive swipe mechanics. The game incorporates engaging merge-and-match gameplay, utilizing Collider2D for smooth and seamless interactions. To keep players challenged, I created time-based puzzles with increasing difficulty, ensuring long-lasting engagement. I also optimized the game for offline play, allowing users to enjoy it without needing an internet connection. To enhance replayability and player retention, I implemented a star rating system that rewards performance, encouraging users to revisit and improve their scores.',
     longDescription: `Overview of the Project:\nDesigned with offline functionality in mind, Superdash No Wifi Game allows players to enjoy the game anytime, anywhere, without requiring an internet connection. Additionally, the introduction of a star rating system enhances replayability by rewarding performance and motivating players to improve their scores.\n\nMerge-and-Match Gameplay: Players merge objects of the same color to progress through levels, creating an addictive and satisfying experience.\nCollider2D Implementation: Utilized for precise collision detection, ensuring smooth object interactions and accurate gameplay responses.\nTime-Based Puzzles: Increasingly difficult levels with time constraints challenge players, adding excitement and urgency to the gameplay.\nStar Rating System: Encourages replayability by assigning performance-based star ratings, motivating players to achieve higher scores and unlock new challenges.\n\nWhat I Learned:\nCollider2D and Physics System: Mastered the use of Collider2D to detect and manage object collisions accurately.\nIntuitive Swipe Input & Gesture Control: Implemented smooth swipe detection and input handling, ensuring fluid and responsive gameplay.\nTime-Based Puzzle Design: Developed time-based challenges with progressively increasing difficulty to maintain user engagement.\nHyper-Casual Game Design Principles: Deepened knowledge of hyper-casual game design, emphasizing simplicity, accessibility, and rapid engagement.`,

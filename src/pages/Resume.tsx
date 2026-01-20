@@ -47,7 +47,7 @@ const Resume = () => {
   ];
 
   const skills = {
-    technical: ['Unity 2D', 'C#', 'Game Development', 'Data Analysis', 'Business Intelligence', 'Statistical Analysis', 'Unity IAP', 'PlayerPrefs'],
+    technical: ['Unity 2D', 'C#', 'Game Development', 'Unity 3D', 'Platform Integration', 'AR/VR', 'Unity IAP', 'PlayerPrefs'],
     soft: ['Problem Solving', 'Team Collaboration', 'Technical Documentation', 'Data Interpretation', 'Testing & Debugging', 'Project Management'],
   };
 

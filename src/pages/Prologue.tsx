@@ -12,6 +12,7 @@ import cppIcon from '../assets/icons/cpp.png';
 import javascriptIcon from '../assets/icons/javascript.png';
 import unityIcon from '../assets/icons/unity.png';
 import asepriteIcon from '../assets/icons/aseprite.png';
+import unrealEngineIcon from '../assets/icons/UnrealEngine.png';
 
 // Import your custom icons
 // Add your icon imports here, for example:
@@ -50,6 +51,10 @@ const Prologue = () => {
         { 
           name: 'Unity',
           iconPath: unityIcon
+        },
+        { 
+          name: 'Unreal Engine',
+          iconPath: unrealEngineIcon
         },
         { 
           name: 'Aseprite',

@@ -22,6 +22,19 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Bowling Game VR',
+    description: 'An immersive virtual reality bowling experience that brings the classic sport into VR. Players can enjoy realistic bowling mechanics with intuitive VR controls and physics-based gameplay.',
+    image: 'https://i.imgur.com/placeholder.png',
+    technologies: ['Unity', 'C#', 'VR SDK', 'Physics Simulation', 'XR Interaction'],
+    platform: 'VR',
+    features: [
+      'Immersive VR bowling experience',
+      'Realistic physics-based ball mechanics',
+      'Intuitive VR controller support',
+      'Interactive bowling alley environment'
+    ]
+  },
+  {
     title: 'Escape Room',
     description: 'An immersive educational puzzle game that combines digital interactions with physical hardware control. Players solve interconnected puzzles about hydroponics and plant science while experiencing real-world feedback through automated door controls.',
     longDescription: `Educational Escape Room Experience
@@ -115,6 +128,55 @@ Technical Stack
       'Progressive difficulty scaling',
       'Real-time feedback and animations',
       'Fail-safe error handling system'
+    ]
+  },
+  {
+    title: 'Fast Gear',
+    description: 'Fast Gear is a high-intensity 3D car racing game built for PC, offering both thrilling single-player challenges and competitive online multiplayer PvP action. Master realistic driving physics and race through dynamic tracks across cities, deserts, and forests. Race the World. Rule the Road.',
+    longDescription: `Fast Gear - Ultimate Racing Experience
+
+Project Overview:
+Fast Gear is a high-intensity 3D car racing game built for PC, offering both thrilling single-player challenges and competitive online multiplayer PvP action. Jump into a garage full of high-performance vehicles, master realistic driving physics, and race through a variety of dynamic tracks across cities, mountains, and highways. Whether you're climbing the career ladder offline or battling real players online, Fast Gear delivers the ultimate racing experience.
+
+Key Features:
+Single Player & Online PvP Multiplayer – Play solo in career, knockout modes or compete live against racers worldwide in real-time PvP.
+
+Wide Range of Cars – Unlock and drive variety of cars.
+
+Diverse Racing Environments – Tackle tracks set in urban streets, Desert, Forest and Many more.
+
+Challenging AI Opponents – Face smart, adaptive AI racers in offline modes.
+
+"Race the World. Rule the Road."`,
+    image: `${process.env.PUBLIC_URL}/assets/fast-gear/FastGear.jpg`,
+    images: [
+      {
+        url: `${process.env.PUBLIC_URL}/assets/fast-gear/FastGear.jpg`,
+        alt: 'Fast Gear Main Gameplay',
+        source: 'local'
+      },
+      {
+        url: `${process.env.PUBLIC_URL}/assets/fast-gear/FastGear1.jpg`,
+        alt: 'Fast Gear Racing Action',
+        source: 'local'
+      },
+      {
+        url: `${process.env.PUBLIC_URL}/assets/fast-gear/FastGear2.jpg`,
+        alt: 'Fast Gear Multiplayer',
+        source: 'local'
+      }
+    ],
+    technologies: ['Unity 3D', 'C#', 'Multiplayer Networking', 'Physics Simulation', 'AI Programming', '3D Modeling', 'UI/UX Design'],
+    platform: 'Steam, Xbox, Playstation',
+    features: [
+      'Single-player career and knockout modes',
+      'Real-time online multiplayer PvP racing',
+      'Wide variety of high-performance vehicles',
+      'Diverse racing environments (cities, deserts, forests)',
+      'Realistic driving physics and controls',
+      'Smart and adaptive AI opponents',
+      'Dynamic track designs across multiple locations',
+      'Competitive online racing with players worldwide'
     ]
   },
   {

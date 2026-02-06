@@ -21,6 +21,7 @@ interface Project {
 }
 
 const projects: Project[] = [
+  /*
   {
     title: 'Bowling Game VR',
     description: 'An immersive virtual reality bowling experience that brings the classic sport into VR. Players can enjoy realistic bowling mechanics with intuitive VR controls and physics-based gameplay.',
@@ -34,6 +35,7 @@ const projects: Project[] = [
       'Interactive bowling alley environment'
     ]
   },
+  */
   {
     title: 'Escape Room',
     description: 'An immersive educational puzzle game that combines digital interactions with physical hardware control. Players solve interconnected puzzles about hydroponics and plant science while experiencing real-world feedback through automated door controls.',
@@ -167,7 +169,7 @@ Challenging AI Opponents – Face smart, adaptive AI racers in offline modes.
       }
     ],
     technologies: ['Unity 3D', 'C#', 'Multiplayer Networking', 'Physics Simulation', 'AI Programming', '3D Modeling', 'UI/UX Design'],
-    platform: 'Steam, Xbox, Playstation',
+    platform: 'Steam, Xbox, Playstation, Epic Games',
     features: [
       'Single-player career and knockout modes',
       'Real-time online multiplayer PvP racing',
@@ -303,7 +305,7 @@ const Portfolio = () => {
   }, []);
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [imageError, setImageError] = useState<{[key: string]: boolean}>({});
+  const [imageError, setImageError] = useState<{ [key: string]: boolean }>({});
 
   const handleOpenDialog = (project: Project) => {
     setSelectedProject(project);
@@ -315,7 +317,7 @@ const Portfolio = () => {
 
   const handleImageError = (imageUrl: string) => {
     console.error(`Failed to load image: ${imageUrl}`);
-    setImageError(prev => ({...prev, [imageUrl]: true}));
+    setImageError(prev => ({ ...prev, [imageUrl]: true }));
   };
 
   const handleImageLoad = (imageUrl: string) => {
@@ -347,7 +349,7 @@ const Portfolio = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ 
+    <Container maxWidth="lg" sx={{
       py: 8,
       minHeight: '100vh',
       background: 'linear-gradient(to bottom, #1a1a2e, #16213e)',
@@ -364,17 +366,17 @@ const Portfolio = () => {
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
           >
-            <SportsEsports sx={{ 
-              fontSize: 60, 
+            <SportsEsports sx={{
+              fontSize: 60,
               color: '#4ecca3',
               mb: 2,
               filter: 'drop-shadow(0 0 10px #4ecca3)'
             }} />
           </motion.div>
-          <Typography 
-            variant="h2" 
-            component="h1" 
-            sx={{ 
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={{
               mb: 2,
               background: 'linear-gradient(45deg, #4ecca3 30%, #7efff5 90%)',
               backgroundClip: 'text',
@@ -387,9 +389,9 @@ const Portfolio = () => {
           >
             Game Projects
           </Typography>
-          <Typography 
-            variant="h6" 
-            sx={{ 
+          <Typography
+            variant="h6"
+            sx={{
               color: '#eeeeee',
               opacity: 0.8,
               maxWidth: '600px',
@@ -400,8 +402,8 @@ const Portfolio = () => {
           </Typography>
         </Box>
 
-        <Box 
-          sx={{ 
+        <Box
+          sx={{
             display: 'grid',
             gridTemplateColumns: {
               xs: '1fr',
@@ -498,10 +500,10 @@ const Portfolio = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={{ 
+                        sx={{
                           color: '#4ecca3',
                           backgroundColor: 'rgba(30, 41, 59, 0.8)',
-                          '&:hover': { 
+                          '&:hover': {
                             transform: 'scale(1.1) rotate(360deg)',
                             backgroundColor: 'rgba(78, 204, 163, 0.2)'
                           },
@@ -516,10 +518,10 @@ const Portfolio = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={{ 
+                        sx={{
                           color: '#4ecca3',
                           backgroundColor: 'rgba(30, 41, 59, 0.8)',
-                          '&:hover': { 
+                          '&:hover': {
                             transform: 'scale(1.1) rotate(360deg)',
                             backgroundColor: 'rgba(78, 204, 163, 0.2)'
                           },
@@ -531,18 +533,18 @@ const Portfolio = () => {
                     )}
                   </Box>
                 </Box>
-                <CardContent 
-                  sx={{ 
-                    flexGrow: 1, 
-                    display: 'flex', 
+                <CardContent
+                  sx={{
+                    flexGrow: 1,
+                    display: 'flex',
                     flexDirection: 'column',
                     backgroundColor: 'rgba(30, 41, 59, 0.9)',
                   }}
                 >
-                  <Typography 
-                    variant="h5" 
-                    gutterBottom 
-                    sx={{ 
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    sx={{
                       fontWeight: 600,
                       color: '#4ecca3',
                       textShadow: '0 0 10px rgba(78, 204, 163, 0.3)',
@@ -550,12 +552,12 @@ const Portfolio = () => {
                   >
                     {project.title}
                   </Typography>
-                  <Typography 
+                  <Typography
                     variant="body2"
-                    sx={{ 
+                    sx={{
                       color: '#eeeeee',
                       opacity: 0.8,
-                      mb: 2 
+                      mb: 2
                     }}
                   >
                     {project.description}
@@ -617,7 +619,7 @@ const Portfolio = () => {
       >
         {selectedProject && (
           <>
-            <DialogTitle sx={{ 
+            <DialogTitle sx={{
               color: '#4ecca3',
               borderBottom: '1px solid rgba(78, 204, 163, 0.2)',
               pb: 2
@@ -628,33 +630,33 @@ const Portfolio = () => {
               <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 3 }}>
                 <Box sx={{ flex: 1, minWidth: 0 }}>
                   <Box sx={{ position: 'relative', borderRadius: 2, overflow: 'hidden', mb: 3 }}>
-                    <img 
-                      src={selectedProject.image} 
+                    <img
+                      src={selectedProject.image}
                       alt={selectedProject.title}
                       style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
                     />
                   </Box>
-                  
+
                   {selectedProject.images && selectedProject.images.length > 0 && (
                     <>
                       <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
                         Project Gallery
                       </Typography>
-                      <ImageList 
-                        sx={{ 
-                          width: '100%', 
+                      <ImageList
+                        sx={{
+                          width: '100%',
                           height: 'auto',
                           backgroundColor: 'rgba(78, 204, 163, 0.05)',
                           borderRadius: 2,
                           p: 2,
                           mb: 3,
                           border: '1px solid rgba(78, 204, 163, 0.1)'
-                        }} 
-                        cols={2} 
+                        }}
+                        cols={2}
                         gap={8}
                       >
                         {selectedProject.images.map((img, index) => (
-                          <ImageListItem 
+                          <ImageListItem
                             key={index}
                             sx={{
                               borderRadius: 2,
@@ -686,14 +688,14 @@ const Portfolio = () => {
                   <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
                     About the Project
                   </Typography>
-                  <Box sx={{ 
+                  <Box sx={{
                     backgroundColor: 'rgba(78, 204, 163, 0.05)',
                     borderRadius: 2,
                     p: 2,
                     mb: 3,
                     border: '1px solid rgba(78, 204, 163, 0.1)'
                   }}>
-                    <Typography variant="body1" sx={{ 
+                    <Typography variant="body1" sx={{
                       whiteSpace: 'pre-line',
                       fontFamily: 'monospace',
                       fontSize: '0.9rem',
@@ -703,11 +705,11 @@ const Portfolio = () => {
                       {selectedProject.longDescription || selectedProject.description}
                     </Typography>
                   </Box>
-                  
+
                   <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
                     Key Features
                   </Typography>
-                  <List sx={{ 
+                  <List sx={{
                     backgroundColor: 'rgba(78, 204, 163, 0.05)',
                     borderRadius: 2,
                     p: 1,
@@ -715,7 +717,7 @@ const Portfolio = () => {
                     border: '1px solid rgba(78, 204, 163, 0.1)'
                   }}>
                     {selectedProject.features?.map((feature, index) => (
-                      <ListItem key={index} sx={{ 
+                      <ListItem key={index} sx={{
                         py: 0.5,
                         '&:not(:last-child)': {
                           borderBottom: '1px solid rgba(78, 204, 163, 0.1)'
@@ -724,8 +726,8 @@ const Portfolio = () => {
                         <ListItemIcon sx={{ minWidth: 36 }}>
                           <CheckCircle sx={{ color: '#4ecca3' }} />
                         </ListItemIcon>
-                        <ListItemText 
-                          primary={feature} 
+                        <ListItemText
+                          primary={feature}
                           sx={{
                             '& .MuiListItemText-primary': {
                               fontSize: '0.9rem',
@@ -740,10 +742,10 @@ const Portfolio = () => {
                   <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
                     Technologies Used
                   </Typography>
-                  <Box sx={{ 
-                    display: 'flex', 
-                    flexWrap: 'wrap', 
-                    gap: 1, 
+                  <Box sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: 1,
                     mb: 2,
                     backgroundColor: 'rgba(78, 204, 163, 0.05)',
                     borderRadius: 2,
@@ -768,10 +770,10 @@ const Portfolio = () => {
                     ))}
                   </Box>
 
-                  <Box sx={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    gap: 1, 
+                  <Box sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1,
                     mt: 2,
                     backgroundColor: 'rgba(78, 204, 163, 0.05)',
                     borderRadius: 2,
@@ -786,7 +788,7 @@ const Portfolio = () => {
                 </Box>
               </Box>
             </DialogContent>
-            <DialogActions sx={{ 
+            <DialogActions sx={{
               borderTop: '1px solid rgba(78, 204, 163, 0.2)',
               px: 3,
               py: 2
@@ -797,7 +799,7 @@ const Portfolio = () => {
                   href={selectedProject.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ 
+                  sx={{
                     color: '#4ecca3',
                     '&:hover': {
                       backgroundColor: 'rgba(78, 204, 163, 0.1)',
@@ -813,7 +815,7 @@ const Portfolio = () => {
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ 
+                  sx={{
                     color: '#4ecca3',
                     '&:hover': {
                       backgroundColor: 'rgba(78, 204, 163, 0.1)',
@@ -823,9 +825,9 @@ const Portfolio = () => {
                   Live Demo
                 </Button>
               )}
-              <Button 
+              <Button
                 onClick={handleCloseDialog}
-                sx={{ 
+                sx={{
                   color: '#4ecca3',
                   '&:hover': {
                     backgroundColor: 'rgba(78, 204, 163, 0.1)',

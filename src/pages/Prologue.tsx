@@ -13,6 +13,8 @@ import javascriptIcon from '../assets/icons/javascript.png';
 import unityIcon from '../assets/icons/unity.png';
 import asepriteIcon from '../assets/icons/aseprite.png';
 import unrealEngineIcon from '../assets/icons/UnrealEngine.png';
+import mysqlIcon from '../assets/icons/mysql.png';
+import sqlserverIcon from '../assets/icons/sqlserver.png';
 
 // Import your custom icons
 // Add your icon imports here, for example:
@@ -26,21 +28,29 @@ const Prologue = () => {
       name: 'Programming Languages & Tools',
       icon: <Code />,
       items: [
-        { 
+        {
           name: 'Python',
           iconPath: pythonIcon
         },
-        { 
+        {
           name: 'C#',
           iconPath: csharpIcon
         },
-        { 
+        {
           name: 'C++',
           iconPath: cppIcon
         },
-        { 
+        {
           name: 'JavaScript',
           iconPath: javascriptIcon
+        },
+        {
+          name: 'MS SQL Server',
+          iconPath: sqlserverIcon
+        },
+        {
+          name: 'MySQL',
+          iconPath: mysqlIcon
         },
       ],
     },
@@ -48,15 +58,15 @@ const Prologue = () => {
       name: 'Game Engines & IDEs',
       icon: <Storage />,
       items: [
-        { 
+        {
           name: 'Unity',
           iconPath: unityIcon
         },
-        { 
+        {
           name: 'Unreal Engine',
           iconPath: unrealEngineIcon
         },
-        { 
+        {
           name: 'Aseprite',
           iconPath: asepriteIcon
         },
@@ -80,10 +90,10 @@ const Prologue = () => {
         <motion.div variants={containerVariants} initial="hidden" animate="visible">
           <Box sx={{ textAlign: 'center', mb: 8, position: 'relative' }}>
             <motion.div variants={glowVariants} initial="initial" animate="animate">
-              <Typography 
-                variant="h1" 
-                component="h1" 
-                sx={{ 
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{
                   mb: 2,
                   background: 'linear-gradient(45deg, #4ecca3 30%, #7efff5 90%)',
                   backgroundClip: 'text',
@@ -94,7 +104,7 @@ const Prologue = () => {
                 Game Developer
               </Typography>
             </motion.div>
-            
+
             {/* Profile Picture */}
             <motion.div
               initial={{ scale: 0, rotate: -180 }}
@@ -161,11 +171,11 @@ const Prologue = () => {
                 />
               </Box>
             </motion.div>
-            
+
             {/* Animated Description */}
-            <Box sx={{ 
-              maxWidth: '800px', 
-              margin: '0 auto', 
+            <Box sx={{
+              maxWidth: '800px',
+              margin: '0 auto',
               mb: 6,
               background: 'linear-gradient(135deg, rgba(78, 204, 163, 0.1) 0%, rgba(78, 84, 255, 0.1) 100%)',
               padding: { xs: 2, md: 4 },
@@ -213,8 +223,8 @@ const Prologue = () => {
             </Box>
           </Box>
 
-          <Box 
-            sx={{ 
+          <Box
+            sx={{
               display: 'grid',
               gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
               gap: 4,
@@ -222,7 +232,7 @@ const Prologue = () => {
           >
             {skills.map((category, index) => (
               <motion.div key={index} variants={itemVariants}>
-                <Paper 
+                <Paper
                   elevation={3}
                   sx={{
                     p: 4,
@@ -244,8 +254,8 @@ const Prologue = () => {
                   }}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-                    <Box 
-                      sx={{ 
+                    <Box
+                      sx={{
                         color: 'primary.main',
                         fontSize: '2rem',
                         mr: 2,
@@ -254,9 +264,9 @@ const Prologue = () => {
                     >
                       {category.icon}
                     </Box>
-                    <Typography 
-                      variant="h5" 
-                      sx={{ 
+                    <Typography
+                      variant="h5"
+                      sx={{
                         color: 'primary.main',
                         fontWeight: 'bold',
                         textTransform: 'uppercase',
@@ -266,8 +276,8 @@ const Prologue = () => {
                       {category.name}
                     </Typography>
                   </Box>
-                  <Box 
-                    sx={{ 
+                  <Box
+                    sx={{
                       display: 'grid',
                       gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
                       gap: 2,
@@ -298,9 +308,9 @@ const Prologue = () => {
                             },
                           }}
                         >
-                          <Box 
+                          <Box
                             className="icon"
-                            sx={{ 
+                            sx={{
                               width: '40px',
                               height: '40px',
                               transition: 'all 0.3s ease',
@@ -315,8 +325,8 @@ const Prologue = () => {
                               },
                             }}
                           >
-                            <img 
-                              src={item.iconPath} 
+                            <img
+                              src={item.iconPath}
                               alt={item.name}
                               onError={(e) => {
                                 // Fallback if image fails to load

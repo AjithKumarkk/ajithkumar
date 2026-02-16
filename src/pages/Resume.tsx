@@ -1,8 +1,12 @@
 import React from 'react';
-import { Container, Typography, Paper, Box, Divider, List, ListItem, ListItemText, Button, Chip } from '@mui/material';
+import { Container, Typography, Paper, Box, Divider, List, ListItem, ListItemText, Button, Chip, Avatar } from '@mui/material';
 import { motion } from 'framer-motion';
 import { SportsEsports, Code, Speed, School, Download } from '@mui/icons-material';
 import { pageVariants, containerVariants, itemVariants, glowVariants, scanlineEffect } from '../animations/pageTransitions';
+import mysqlIcon from '../assets/icons/mysql.png';
+import sqlserverIcon from '../assets/icons/sqlserver.png';
+import csharpIcon from '../assets/icons/csharp.png';
+import unityIcon from '../assets/icons/unity.png';
 
 const Resume = () => {
   const experiences = [
@@ -22,9 +26,22 @@ const Resume = () => {
       ],
     },
     {
+      title: 'Junior Dotnet Developer',
+      company: 'Stratagile Pvt Ltd',
+      period: 'Nov 2022 - Oct 2023',
+      icon: <Code />,
+      responsibilities: [
+        'Build web, desktop, or API-based applications',
+        'Write clean, efficient code using C# (primary language)',
+        'Work with front-end technologies like HTML, CSS, JavaScript, and frameworks such as React',
+        'Design and manage databases using SQL Server and other databases',
+        'Write queries, stored procedures, and optimize database performance'
+      ],
+    },
+    {
       title: 'Junior Data Analyst',
       company: 'Stratagile Pvt Ltd',
-      period: 'Dec 2020 - Oct 2023',
+      period: 'Dec 2020 - Nov 2022',
       icon: <Speed />,
       responsibilities: [
         'Extracted and interpreted data patterns to translate findings into actionable outcomes',
@@ -47,7 +64,18 @@ const Resume = () => {
   ];
 
   const skills = {
-    technical: ['Unity 2D', 'C#', 'Game Development', 'Unity 3D', 'Platform Integration', 'AR/VR', 'Unity IAP', 'PlayerPrefs'],
+    technical: [
+      { name: 'Unity 2D', icon: unityIcon },
+      { name: 'C#', icon: csharpIcon },
+      { name: 'Game Development' },
+      { name: 'Unity 3D', icon: unityIcon },
+      { name: 'MS SQL Server', icon: sqlserverIcon },
+      { name: 'MySQL', icon: mysqlIcon },
+      { name: 'Platform Integration' },
+      { name: 'AR/VR' },
+      { name: 'Unity IAP' },
+      { name: 'PlayerPrefs' }
+    ],
     soft: ['Problem Solving', 'Team Collaboration', 'Technical Documentation', 'Data Interpretation', 'Testing & Debugging', 'Project Management'],
   };
 
@@ -76,8 +104,8 @@ const Resume = () => {
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
-              <SportsEsports sx={{ 
-                fontSize: 60, 
+              <SportsEsports sx={{
+                fontSize: 60,
                 color: '#4ecca3',
                 mb: 2,
                 filter: 'drop-shadow(0 0 10px #4ecca3)'
@@ -85,10 +113,10 @@ const Resume = () => {
             </motion.div>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2, mb: 2 }}>
               <motion.div variants={glowVariants}>
-                <Typography 
-                  variant="h2" 
-                  component="h1" 
-                  sx={{ 
+                <Typography
+                  variant="h2"
+                  component="h1"
+                  sx={{
                     background: 'linear-gradient(45deg, #4ecca3 30%, #7efff5 90%)',
                     backgroundClip: 'text',
                     textFillColor: 'transparent',
@@ -133,9 +161,9 @@ const Resume = () => {
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
             {/* Experience Section */}
             <motion.div variants={itemVariants}>
-              <Paper 
-                elevation={3} 
-                sx={{ 
+              <Paper
+                elevation={3}
+                sx={{
                   p: 4,
                   position: 'relative',
                   overflow: 'hidden',
@@ -151,10 +179,10 @@ const Resume = () => {
                   },
                 }}
               >
-                <Typography 
-                  variant="h4" 
+                <Typography
+                  variant="h4"
                   gutterBottom
-                  sx={{ 
+                  sx={{
                     color: 'primary.main',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
@@ -169,8 +197,8 @@ const Resume = () => {
                         whileHover={{ scale: 1.1, rotate: 360 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <Box 
-                          sx={{ 
+                        <Box
+                          sx={{
                             color: 'primary.main',
                             mr: 2,
                             fontSize: '2rem',
@@ -195,10 +223,10 @@ const Resume = () => {
                     <List>
                       {exp.responsibilities.map((resp, idx) => (
                         <ListItem key={idx} sx={{ pl: 2 }}>
-                          <ListItemText 
+                          <ListItemText
                             primary={resp}
-                            sx={{ 
-                              '& .MuiListItemText-primary': { 
+                            sx={{
+                              '& .MuiListItemText-primary': {
                                 color: 'text.primary',
                               }
                             }}
@@ -207,11 +235,11 @@ const Resume = () => {
                       ))}
                     </List>
                     {index < experiences.length - 1 && (
-                      <Divider 
-                        sx={{ 
+                      <Divider
+                        sx={{
                           my: 2,
                           borderColor: 'rgba(78, 204, 163, 0.2)',
-                        }} 
+                        }}
                       />
                     )}
                   </Box>
@@ -221,9 +249,9 @@ const Resume = () => {
 
             {/* Education Section */}
             <motion.div variants={itemVariants}>
-              <Paper 
-                elevation={3} 
-                sx={{ 
+              <Paper
+                elevation={3}
+                sx={{
                   p: 4,
                   position: 'relative',
                   overflow: 'hidden',
@@ -239,10 +267,10 @@ const Resume = () => {
                   },
                 }}
               >
-                <Typography 
-                  variant="h4" 
+                <Typography
+                  variant="h4"
                   gutterBottom
-                  sx={{ 
+                  sx={{
                     color: 'primary.main',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
@@ -256,8 +284,8 @@ const Resume = () => {
                       whileHover={{ scale: 1.1, rotate: 360 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Box 
-                        sx={{ 
+                      <Box
+                        sx={{
                           color: 'primary.main',
                           mr: 2,
                           fontSize: '2rem',
@@ -289,9 +317,9 @@ const Resume = () => {
             {/* Skills Section */}
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 4 }}>
               <motion.div variants={itemVariants}>
-                <Paper 
-                  elevation={3} 
-                  sx={{ 
+                <Paper
+                  elevation={3}
+                  sx={{
                     p: 4,
                     height: '100%',
                     position: 'relative',
@@ -308,10 +336,10 @@ const Resume = () => {
                     },
                   }}
                 >
-                  <Typography 
-                    variant="h4" 
+                  <Typography
+                    variant="h4"
                     gutterBottom
-                    sx={{ 
+                    sx={{
                       color: 'primary.main',
                       textTransform: 'uppercase',
                       letterSpacing: '0.1em',
@@ -323,11 +351,12 @@ const Resume = () => {
                     {skills.technical.map((skill, index) => (
                       <Chip
                         key={index}
-                        label={skill}
+                        avatar={skill.icon ? <Avatar alt={skill.name} src={skill.icon} /> : undefined}
+                        label={skill.name}
                         sx={{
                           backgroundColor: 'rgba(78, 204, 163, 0.1)',
                           color: 'primary.light',
-                          px: 2,
+                          px: 1,
                           py: 1,
                           borderRadius: '16px', // More rounded corners
                           border: '1px solid rgba(78, 204, 163, 0.3)',
@@ -337,6 +366,11 @@ const Resume = () => {
                             boxShadow: '0 0 10px rgba(78, 204, 163, 0.3)',
                             backgroundColor: 'rgba(78, 204, 163, 0.2)',
                           },
+                          '& .MuiChip-avatar': {
+                            width: 24,
+                            height: 24,
+                            marginLeft: '4px !important',
+                          }
                         }}
                       />
                     ))}
@@ -345,9 +379,9 @@ const Resume = () => {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <Paper 
-                  elevation={3} 
-                  sx={{ 
+                <Paper
+                  elevation={3}
+                  sx={{
                     p: 4,
                     height: '100%',
                     position: 'relative',
@@ -364,10 +398,10 @@ const Resume = () => {
                     },
                   }}
                 >
-                  <Typography 
-                    variant="h4" 
+                  <Typography
+                    variant="h4"
                     gutterBottom
-                    sx={{ 
+                    sx={{
                       color: 'primary.main',
                       textTransform: 'uppercase',
                       letterSpacing: '0.1em',

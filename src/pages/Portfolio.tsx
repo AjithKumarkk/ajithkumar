@@ -179,7 +179,8 @@ Challenging AI Opponents – Face smart, adaptive AI racers in offline modes.
       'Smart and adaptive AI opponents',
       'Dynamic track designs across multiple locations',
       'Competitive online racing with players worldwide'
-    ]
+    ],
+    liveUrl: 'https://store.steampowered.com/app/1282390/Fast_Gear/'
   },
   {
     title: 'Superdash - No Wifi Games',

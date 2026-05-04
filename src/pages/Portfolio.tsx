@@ -21,6 +21,75 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: 'The Curse 404',
+    description: 'A first-person psychological horror game built in Unity that focuses on atmosphere, tension, and player-driven fear. The game dynamically reacts to player behavior, increasing anxiety through environmental changes and unsettling narrative feedback.',
+    image: `${process.env.PUBLIC_URL}/assets/the-curse-404/cover.jpg`,
+    images: [
+      {
+        url: `${process.env.PUBLIC_URL}/assets/the-curse-404/1.jpg`,
+        alt: 'The Curse 404 Gameplay 1',
+        source: 'local'
+      },
+      {
+        url: `${process.env.PUBLIC_URL}/assets/the-curse-404/2.jpg`,
+        alt: 'The Curse 404 Gameplay 2',
+        source: 'local'
+      },
+      {
+        url: `${process.env.PUBLIC_URL}/assets/the-curse-404/3.jpg`,
+        alt: 'The Curse 404 Gameplay 3',
+        source: 'local'
+      }
+    ],
+    technologies: ['Unity', 'C#', 'Unity Input System', 'TextMeshPro', 'Scriptable Architecture', 'Raycasting', 'Persistent Data'],
+    platform: 'PC / Windows, Console',
+    features: [
+      'Raycast-based modular interaction system',
+      'Real-time anxiety tracking and adaptive gameplay',
+      'Dynamic text system with sarcastic narrative feedback',
+      'Atmospheric environmental changes driven by player actions',
+      'Smooth UI/HUD transitions and interaction feedback',
+      'Advanced scene management and game flow control'
+    ],
+    longDescription: `The Curse 404 - A Descent into Digital Madness
+
+Project Overview:
+A first-person psychological horror game built in Unity that focuses on atmosphere, tension, and player-driven fear. Instead of relying on traditional jumpscares, the game dynamically reacts to player behavior, increasing anxiety through environmental changes, interactive elements, and sarcastic, unsettling narrative feedback.
+
+Technical Implementation:
+Core Systems:
+• Interaction System
+  - Raycast-based object interaction
+  - Dynamic contextual prompts (e.g., “Press E / F”)
+  - Modular interactable architecture
+
+• Anxiety System
+  - Real-time anxiety tracking based on player actions
+  - Dynamic text system with sarcastic and mocking feedback
+  - Adaptive gameplay intensity
+
+• UI & HUD System
+  - Crosshair-based interaction feedback
+  - Smooth UI transitions and animations
+  - TextMeshPro-driven dynamic captions
+
+• Game Flow Management
+  - Scene transitions and state handling
+  - Fail / retry / win panel systems
+  - Timed events and scripted sequences
+
+Technical Stack:
+• Unity (Game Engine)
+• C# (Programming)
+• Unity Input System
+• TextMeshPro (UI System)
+• Unity UI (Canvas System)
+• Scriptable Architecture (Modular Systems)
+• Raycasting (Interaction Detection)
+• Animation System
+• Persistent Data Save (Data Handling)`
+  },
   /*
   {
     title: 'Bowling Game VR',

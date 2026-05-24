@@ -74,7 +74,7 @@ const Prologue = () => {
     },
   ];
 
-  const description = "🎮 Hi, I'm Ajith Kumar — a Game Developer turning ideas into interactive adventures. With Unity, C#, and a love for immersive play, I build games that entertain, engage, and leave a lasting impression.";
+  const description = "🎮 Turning ideas into interactive adventures. Specializing in Unity, C#, and gameplay mechanics to build immersive experiences that entertain, engage, and connect players.";
 
   // Split description into words for animation
   const words = description.split(' ');
@@ -94,14 +94,31 @@ const Prologue = () => {
                 variant="h1"
                 component="h1"
                 sx={{
-                  mb: 2,
+                  mb: 1,
                   background: 'linear-gradient(45deg, #4ecca3 30%, #7efff5 90%)',
                   backgroundClip: 'text',
                   textFillColor: 'transparent',
-                  fontSize: { xs: '2.5rem', md: '4rem' },
+                  fontSize: { xs: '3rem', md: '5rem' },
+                  fontWeight: 800,
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase',
                 }}
               >
-                Game Developer
+                Ajith Kumar
+              </Typography>
+              <Typography
+                variant="h4"
+                component="h2"
+                sx={{
+                  mb: 3,
+                  color: 'primary.light',
+                  fontWeight: 600,
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  fontSize: { xs: '1.25rem', md: '2rem' },
+                }}
+              >
+                Unity Game Developer
               </Typography>
             </motion.div>
 
@@ -209,8 +226,8 @@ const Prologue = () => {
                       variant="h5"
                       component="span"
                       sx={{
-                        color: (word === 'Ajith' || word === 'Kumar') ? '#4ecca3' : 'text.primary',
-                        fontWeight: (word === 'Ajith' || word === 'Kumar') ? 'bold' : 'normal',
+                        color: (word.includes('Unity') || word.includes('C#') || word.includes('interactive') || word.includes('immersive')) ? '#4ecca3' : 'text.primary',
+                        fontWeight: (word.includes('Unity') || word.includes('C#') || word.includes('interactive') || word.includes('immersive')) ? 'bold' : 'normal',
                         display: 'inline-block',
                         mr: '4px',
                       }}

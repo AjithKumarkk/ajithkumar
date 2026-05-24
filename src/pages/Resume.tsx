@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Typography, Paper, Box, Divider, List, ListItem, ListItemText, Button, Chip, Avatar } from '@mui/material';
+import { Container, Typography, Paper, Box, Divider, List, ListItem, ListItemText, Chip, Avatar } from '@mui/material';
 import { motion } from 'framer-motion';
-import { SportsEsports, Code, Speed, School, Download } from '@mui/icons-material';
+import { SportsEsports, Code, Speed, School } from '@mui/icons-material';
 import { pageVariants, containerVariants, itemVariants, glowVariants, scanlineEffect } from '../animations/pageTransitions';
 import mysqlIcon from '../assets/icons/mysql.png';
 import sqlserverIcon from '../assets/icons/sqlserver.png';
@@ -79,15 +79,7 @@ const Resume = () => {
     soft: ['Problem Solving', 'Team Collaboration', 'Technical Documentation', 'Data Interpretation', 'Testing & Debugging', 'Project Management'],
   };
 
-  const handleDownloadResume = () => {
-    // The PDF file should be placed in public/assets/docs/AJITH_KUMAR_K_K_RESUME.pdf
-    const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/assets/docs/AJITH_KUMAR_K_K_RESUME.pdf`;
-    link.download = 'AJITH_KUMAR_K_K_RESUME.pdf'; // Name that will appear when downloading
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
 
   return (
     <motion.div
@@ -111,51 +103,23 @@ const Resume = () => {
                 filter: 'drop-shadow(0 0 10px #4ecca3)'
               }} />
             </motion.div>
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2, mb: 2 }}>
-              <motion.div variants={glowVariants}>
-                <Typography
-                  variant="h2"
-                  component="h1"
-                  sx={{
-                    background: 'linear-gradient(45deg, #4ecca3 30%, #7efff5 90%)',
-                    backgroundClip: 'text',
-                    textFillColor: 'transparent',
-                    fontWeight: 'bold',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                  }}
-                >
-                  Game Dev Journey
-                </Typography>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <motion.div variants={glowVariants}>
+              <Typography
+                variant="h2"
+                component="h1"
+                sx={{
+                  mb: 2,
+                  background: 'linear-gradient(45deg, #4ecca3 30%, #7efff5 90%)',
+                  backgroundClip: 'text',
+                  textFillColor: 'transparent',
+                  fontWeight: 'bold',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                }}
               >
-                <Button
-                  variant="contained"
-                  startIcon={<Download />}
-                  onClick={handleDownloadResume}
-                  sx={{
-                    background: 'linear-gradient(45deg, rgba(78, 204, 163, 0.2), rgba(78, 84, 255, 0.2))',
-                    border: '1px solid rgba(78, 204, 163, 0.5)',
-                    backdropFilter: 'blur(4px)',
-                    color: '#4ecca3',
-                    fontWeight: 'bold',
-                    px: 3,
-                    py: 1,
-                    transition: 'all 0.3s ease',
-                    '&:hover': {
-                      background: 'linear-gradient(45deg, rgba(78, 204, 163, 0.3), rgba(78, 84, 255, 0.3))',
-                      boxShadow: '0 0 20px rgba(78, 204, 163, 0.4)',
-                      border: '1px solid rgba(78, 204, 163, 0.8)',
-                    },
-                  }}
-                >
-                  Download Resume
-                </Button>
-              </motion.div>
-            </Box>
+                Game Dev Journey
+              </Typography>
+            </motion.div>
           </Box>
 
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>

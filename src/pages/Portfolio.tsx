@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, CardContent, CardMedia, Typography, Box, IconButton, Chip, Dialog, DialogTitle, DialogContent, DialogActions, Button, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, ImageList, ImageListItem } from '@mui/material';
 import { motion } from 'framer-motion';
-import { GitHub, Launch, SportsEsports, Code, Devices, Star, CheckCircle } from '@mui/icons-material';
+import { GitHub, Launch, SportsEsports, Code, Devices, Star, StarHalf, StarBorder, CheckCircle, PlayArrow, Apple, ShoppingCart } from '@mui/icons-material';
 
 interface Project {
   title: string;
@@ -18,12 +18,25 @@ interface Project {
   platform: string;
   features?: string[];
   longDescription?: string;
+  modalTitle?: string;
+  roleContributions?: string[];
+  rating?: number;
+  installs?: string;
+  isProfessionalTeam?: boolean;
+  cardTags?: string[];
+  storeLinks?: {
+    platform: string;
+    url?: string;
+    label?: string;
+  }[];
 }
 
 const projects: Project[] = [
   {
     title: 'The Curse 404',
+    modalTitle: 'The Curse 404 — A Descent into Digital Madness',
     description: 'A first-person psychological horror game built in Unity that focuses on atmosphere, tension, and player-driven fear. The game dynamically reacts to player behavior, increasing anxiety through environmental changes and unsettling narrative feedback.',
+    longDescription: 'The Curse 404 is a first-person psychological horror game released on Steam, Epic Games, Xbox, and PlayStation. Rather than relying on traditional jump scares, the game builds dread by dynamically reacting to how you play — increasing anxiety through environmental shifts, interactive elements, and sarcastic, unsettling narrative feedback. Both a free demo and the full version are available across all platforms.',
     image: `${process.env.PUBLIC_URL}/assets/the-curse-404/cover.jpg`,
     images: [
       {
@@ -43,68 +56,33 @@ const projects: Project[] = [
       }
     ],
     technologies: ['Unity', 'C#', 'Unity Input System', 'TextMeshPro', 'Scriptable Architecture', 'Raycasting', 'Persistent Data'],
-    platform: 'PC / Windows, Console',
-    features: [
-      'Raycast-based modular interaction system',
-      'Real-time anxiety tracking and adaptive gameplay',
-      'Dynamic text system with sarcastic narrative feedback',
-      'Atmospheric environmental changes driven by player actions',
-      'Smooth UI/HUD transitions and interaction feedback',
-      'Advanced scene management and game flow control'
+    cardTags: ['Unity', 'C#', 'Unity Input System', 'Raycasting'],
+    platform: 'PC / Windows · Console',
+    liveUrl: 'https://store.steampowered.com/app/4320820/The_Curse_404/',
+    isProfessionalTeam: true,
+    storeLinks: [
+      { platform: 'Steam', url: 'https://store.steampowered.com/app/4320820/The_Curse_404/', label: 'Steam (Demo + Full Version)' },
+      { platform: 'Epic Games Store', url: 'https://store.epicgames.com/p/the-curse-404-41b724', label: 'Epic Games Store (Demo + Full Version)' },
+      { platform: 'Xbox', url: 'https://www.xbox.com/en-in/games/store/the-curse-404/9pm6r3trlz11' },
+      { platform: 'PlayStation', url: 'https://store.playstation.com/en-in/product/EP8934-CUSA57814_00-0382593811541787' }
     ],
-    longDescription: `The Curse 404 - A Descent into Digital Madness
-
-Project Overview:
-A first-person psychological horror game built in Unity that focuses on atmosphere, tension, and player-driven fear. Instead of relying on traditional jumpscares, the game dynamically reacts to player behavior, increasing anxiety through environmental changes, interactive elements, and sarcastic, unsettling narrative feedback.
-
-Technical Implementation:
-Core Systems:
-• Interaction System
-  - Raycast-based object interaction
-  - Dynamic contextual prompts (e.g., “Press E / F”)
-  - Modular interactable architecture
-
-• Anxiety System
-  - Real-time anxiety tracking based on player actions
-  - Dynamic text system with sarcastic and mocking feedback
-  - Adaptive gameplay intensity
-
-• UI & HUD System
-  - Crosshair-based interaction feedback
-  - Smooth UI transitions and animations
-  - TextMeshPro-driven dynamic captions
-
-• Game Flow Management
-  - Scene transitions and state handling
-  - Fail / retry / win panel systems
-  - Timed events and scripted sequences
-
-Technical Stack:
-• Unity (Game Engine)
-• C# (Programming)
-• Unity Input System
-• TextMeshPro (UI System)
-• Unity UI (Canvas System)
-• Scriptable Architecture (Modular Systems)
-• Raycasting (Interaction Detection)
-• Animation System
-• Persistent Data Save (Data Handling)`
-  },
-  /*
-  {
-    title: 'Bowling Game VR',
-    description: 'An immersive virtual reality bowling experience that brings the classic sport into VR. Players can enjoy realistic bowling mechanics with intuitive VR controls and physics-based gameplay.',
-    image: 'https://i.imgur.com/placeholder.png',
-    technologies: ['Unity', 'C#', 'VR SDK', 'Physics Simulation', 'XR Interaction'],
-    platform: 'VR',
     features: [
-      'Immersive VR bowling experience',
-      'Realistic physics-based ball mechanics',
-      'Intuitive VR controller support',
-      'Interactive bowling alley environment'
+      'Raycast-based modular interaction system with dynamic contextual prompts',
+      'Real-time anxiety tracking that adapts gameplay to player behavior',
+      'Dynamic sarcastic narrative feedback system driven by player actions',
+      'Atmospheric environmental changes that evolve with player choices',
+      'Smooth UI/HUD transitions with TextMeshPro-driven captions',
+      'Robust scene management, timed events, and scripted sequences',
+      'Persistent save system for progress, state, and game settings'
+    ],
+    roleContributions: [
+      'Built the core gameplay mechanics — player movement, environmental interaction, and raycast-based object interaction with dynamic contextual prompts',
+      'Developed the puzzle interaction system, handling logic triggers, player-driven puzzle states, and fail/retry/win flow management',
+      'Implemented the anxiety tracking system — a real-time system that monitors player behavior and adjusts gameplay intensity and narrative feedback dynamically',
+      'Created the persistent save system managing scene state, player progress, and game data across sessions',
+      'Managed end-to-end store submission and deployment on Steam and Epic Games Store — including build pipelines, metadata, and release management'
     ]
   },
-  */
   {
     title: 'Escape Room',
     description: 'An immersive educational puzzle game that combines digital interactions with physical hardware control. Players solve interconnected puzzles about hydroponics and plant science while experiencing real-world feedback through automated door controls.',
@@ -203,22 +181,9 @@ Technical Stack
   },
   {
     title: 'Fast Gear',
-    description: 'Fast Gear is a high-intensity 3D car racing game built for PC, offering both thrilling single-player challenges and competitive online multiplayer PvP action. Master realistic driving physics and race through dynamic tracks across cities, deserts, and forests. Race the World. Rule the Road.',
-    longDescription: `Fast Gear - Ultimate Racing Experience
-
-Project Overview:
-Fast Gear is a high-intensity 3D car racing game built for PC, offering both thrilling single-player challenges and competitive online multiplayer PvP action. Jump into a garage full of high-performance vehicles, master realistic driving physics, and race through a variety of dynamic tracks across cities, mountains, and highways. Whether you're climbing the career ladder offline or battling real players online, Fast Gear delivers the ultimate racing experience.
-
-Key Features:
-Single Player & Online PvP Multiplayer – Play solo in career, knockout modes or compete live against racers worldwide in real-time PvP.
-
-Wide Range of Cars – Unlock and drive variety of cars.
-
-Diverse Racing Environments – Tackle tracks set in urban streets, Desert, Forest and Many more.
-
-Challenging AI Opponents – Face smart, adaptive AI racers in offline modes.
-
-"Race the World. Rule the Road."`,
+    modalTitle: 'Fast Gear — Ultimate Racing Experience',
+    description: 'Fast Gear is a high-intensity 3D car racing game offering both thrilling single-player career modes and competitive real-time online multiplayer. Master realistic driving physics and race through dynamic tracks across cities, deserts, and forests. Released on Steam, Epic Games, Xbox, and PlayStation.',
+    longDescription: 'Fast Gear is a multi-platform 3D racing game built in Unity, available on Steam, Epic Games, Xbox, and PlayStation. Players choose from a wide garage of high-performance vehicles and compete across diverse environments — urban streets, deserts, forests, and mountain highways. The game supports both an offline single-player career and real-time online PvP multiplayer, delivering a complete racing experience across skill levels.',
     image: `${process.env.PUBLIC_URL}/assets/fast-gear/FastGear.jpg`,
     images: [
       {
@@ -238,23 +203,37 @@ Challenging AI Opponents – Face smart, adaptive AI racers in offline modes.
       }
     ],
     technologies: ['Unity 3D', 'C#', 'Multiplayer Networking', 'Physics Simulation', 'AI Programming', '3D Modeling', 'UI/UX Design'],
-    platform: 'Steam, Xbox, Playstation, Epic Games',
+    cardTags: ['Unity 3D', 'C#', 'Multiplayer Networking', 'Physics Simulation'],
+    platform: 'PC · Console',
+    liveUrl: 'https://store.steampowered.com/app/1282390/Fast_Gear/',
+    isProfessionalTeam: true,
+    storeLinks: [
+      { platform: 'Steam', url: 'https://store.steampowered.com/app/1282390/Fast_Gear/' },
+      { platform: 'Epic Games Store', url: 'https://store.epicgames.com/p/fast-gear-454cd7' },
+      { platform: 'Xbox', url: 'https://www.xbox.com/en-IN/games/store/fast-gear/9PB6LNR98202/0010' },
+      { platform: 'PlayStation', url: 'https://store.playstation.com/en-in/product/EP8934-CUSA53640_00-0253818994512950' }
+    ],
     features: [
       'Single-player career and knockout modes',
       'Real-time online multiplayer PvP racing',
-      'Wide variety of high-performance vehicles',
-      'Diverse racing environments (cities, deserts, forests)',
-      'Realistic driving physics and controls',
-      'Smart and adaptive AI opponents',
-      'Dynamic track designs across multiple locations',
-      'Competitive online racing with players worldwide'
+      'Wide variety of high-performance vehicles to unlock and drive',
+      'Diverse racing environments — cities, deserts, forests, mountains',
+      'Realistic driving physics and responsive controls',
+      'Smart and adaptive AI opponents for offline play',
+      'Dynamic track designs across multiple global locations',
+      'Competitive online leaderboards and worldwide matchmaking'
     ],
-    liveUrl: 'https://store.steampowered.com/app/1282390/Fast_Gear/'
+    roleContributions: [
+      'Designed and implemented the complete UI system — including all menus, HUD, race flow screens, lap counters, and end-of-race result panels',
+      'Built and iterated on UI/UX flows to ensure smooth player navigation across career mode, multiplayer lobby, garage, and settings screens',
+      'Managed end-to-end store submission and deployment on Steam and Epic Games Store — including build pipelines, platform certification, metadata management, and release coordination'
+    ]
   },
   {
     title: 'Superdash - No Wifi Games',
-    description: 'Superdash Offline, a hyper-casual mobile game featuring vibrant visuals and intuitive swipe mechanics. The game incorporates engaging merge-and-match gameplay, utilizing Collider2D for smooth and seamless interactions. To keep players challenged, I created time-based puzzles with increasing difficulty, ensuring long-lasting engagement. I also optimized the game for offline play, allowing users to enjoy it without needing an internet connection. To enhance replayability and player retention, I implemented a star rating system that rewards performance, encouraging users to revisit and improve their scores.',
-    longDescription: `Overview of the Project:\nDesigned with offline functionality in mind, Superdash No Wifi Game allows players to enjoy the game anytime, anywhere, without requiring an internet connection. Additionally, the introduction of a star rating system enhances replayability by rewarding performance and motivating players to improve their scores.\n\nMerge-and-Match Gameplay: Players merge objects of the same color to progress through levels, creating an addictive and satisfying experience.\nCollider2D Implementation: Utilized for precise collision detection, ensuring smooth object interactions and accurate gameplay responses.\nTime-Based Puzzles: Increasingly difficult levels with time constraints challenge players, adding excitement and urgency to the gameplay.\nStar Rating System: Encourages replayability by assigning performance-based star ratings, motivating players to achieve higher scores and unlock new challenges.\n\nWhat I Learned:\nCollider2D and Physics System: Mastered the use of Collider2D to detect and manage object collisions accurately.\nIntuitive Swipe Input & Gesture Control: Implemented smooth swipe detection and input handling, ensuring fluid and responsive gameplay.\nTime-Based Puzzle Design: Developed time-based challenges with progressively increasing difficulty to maintain user engagement.\nHyper-Casual Game Design Principles: Deepened knowledge of hyper-casual game design, emphasizing simplicity, accessibility, and rapid engagement.`,
+    modalTitle: 'Superdash – Play Anywhere, No Internet Needed',
+    description: 'Superdash is an offline-first hyper-casual mobile game featuring vibrant merge-and-match gameplay with intuitive swipe controls. Designed for play anywhere without an internet connection, the game rewards performance with a star rating system that keeps players coming back.',
+    longDescription: 'Superdash is a hyper-casual mobile game built for offline play — no internet required. Players merge objects of the same color to advance through progressively harder time-based puzzles, with smooth swipe controls and a star rating system that motivates replay. Designed around simplicity and rapid engagement, Superdash is optimized for mobile performance and broad accessibility.',
     image: 'https://i.imgur.com/7P2uipQ.png',
     images: [
       {
@@ -269,35 +248,34 @@ Challenging AI Opponents – Face smart, adaptive AI racers in offline modes.
       }
     ],
     technologies: ['Unity', 'C#', 'SQLite', '2D Animation', 'Addressables', 'Collider2D'],
+    cardTags: ['Unity', 'C#', 'SQLite', 'Collider2D'],
     platform: 'Mobile',
-    features: [
-      'Merge-and-match gameplay with addictive progression',
-      'Precise collision detection using Collider2D',
-      'Time-based puzzles with increasing difficulty',
-      'Offline play – no internet required',
-      'Star rating system for replayability and challenge',
-      'Intuitive swipe and gesture controls',
-      'Hyper-casual design for rapid engagement'
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.Sector4Interactive.SuperdashOffline&hl=en',
+    rating: 4.8,
+    isProfessionalTeam: true,
+    storeLinks: [
+      { platform: 'Google Play Store', url: 'https://play.google.com/store/apps/details?id=com.Sector4Interactive.SuperdashOffline&hl=en', label: 'Google Play Store ⭐ 4.8 stars' }
     ],
-    liveUrl: 'https://play.google.com/store/apps/details?id=com.Sector4Interactive.SuperdashOffline&hl=en'
+    features: [
+      'Merge-and-match gameplay with addictive color-matching progression',
+      'Precise collision detection using Collider2D for smooth object interactions',
+      'Time-based puzzles with increasing difficulty and urgency',
+      'Fully offline — no internet connection required',
+      'Star rating system that rewards performance and encourages replayability',
+      'Intuitive swipe and gesture controls for fluid mobile gameplay',
+      'Hyper-casual design for instant pick-up-and-play engagement'
+    ],
+    roleContributions: [
+      'Designed and implemented the complete level system — structuring progression, managing difficulty scaling, and ensuring each stage introduces new challenge without frustrating players',
+      'Built the in-game review prompt system using Unity\'s native review API to drive user ratings at the right moment in the player journey',
+      'Managed Google Play Console deployment — including APK uploads, store listing management, and release coordination'
+    ]
   },
   {
     title: 'Puzzle Odyssey',
-    description: 'Puzzle Odyssey is an immersive word puzzle game that combines challenging gameplay with stunning visuals and relaxing soundscapes. Players can test their vocabulary, sharpen their minds, and unwind as they swipe through hidden words across beautiful landscapes. Designed for puzzle lovers seeking both fun and education, the game offers an engaging experience. I implemented Unity in-app purchases for both iOS and Android, used Line Renderer to form words from letters using colliders, and integrated in-app reviews to enhance user feedback on both platforms.',
-    longDescription: `Overview of the Project:
-Puzzle Odyssey is a captivating word puzzle game that challenges players to discover hidden words by connecting letters across a grid. The game blends immersive gameplay with visually appealing landscapes and calming soundtracks, creating a relaxing yet mentally stimulating experience. It caters to puzzle enthusiasts who seek entertainment while enhancing their vocabulary and cognitive skills.
-
-Challenging Word Puzzles: Players swipe through letters to form meaningful words, progressing through levels of increasing difficulty.
-Cross-Platform Availability: Launched on both iOS and Android, ensuring a seamless experience across devices.
-In-App Purchases (IAP): Monetization enabled through purchasable hints, level unlocks, and ad-free options using Unity IAP.
-In-App Reviews Integration: Incorporated user feedback mechanism to prompt in-game reviews, boosting app visibility and credibility.
-Word Formation Mechanics: Implemented Line Renderer with Collider2D to detect swipes and accurately form words from letter grids.
-
-What I Learned:
-Advanced Unity Game Development Techniques: Implemented game logic efficiently to manage level progression and word validation.
-In-App Purchases (IAP) Integration: Gained expertise in managing consumable and non-consumable purchases, ensuring a smooth and secure transaction process.
-In-App Reviews Implementation: Integrated Google Play and App Store in-app review prompts to encourage user feedback.
-Persistent Data Management: Utilized PlayerPrefs to save user progress, game settings, and high scores across sessions.`,
+    modalTitle: 'Puzzle Odyssey — Words Meet Wonder',
+    description: 'Puzzle Odyssey is an immersive cross-platform word puzzle game that blends challenging vocabulary gameplay with beautiful landscapes and calming soundtracks. Players swipe through letter grids to discover hidden words across stunning environments — available on iOS and Android.',
+    longDescription: 'Puzzle Odyssey challenges players to discover hidden words by connecting letters across a grid, set against immersive landscapes and relaxing soundtracks. Launched on both iOS and Android, the game blends vocabulary training with visually stunning environments — designed for puzzle enthusiasts who want both mental stimulation and a calming experience. Monetized through Unity IAP with a smooth, fair purchase flow.',
     image: 'https://i.imgur.com/gFmttwW.png',
     images: [
       {
@@ -316,18 +294,32 @@ Persistent Data Management: Utilized PlayerPrefs to save user progress, game set
         source: 'imgur'
       }
     ],
-    technologies: ['Unity', 'C#', 'Shader Graph', 'Cinemachine', 'Post Processing', 'Unity IAP', 'Line Renderer', 'Collider2D', 'PlayerPrefs'],
+    technologies: ['Unity', 'C#', 'Shader Graph', 'Cinemachine', 'Post Processing', 'Unity IAP', 'Line Renderer', 'Collider2D', 'PlayerPrefs', 'PlayFab'],
+    cardTags: ['Unity', 'C#', 'Shader Graph', 'Unity IAP', 'PlayFab'],
     platform: 'Mobile',
     liveUrl: 'https://play.google.com/store/apps/details?id=com.Sector4Interactive.PuzzleOdyssey&hl=en_IN',
+    rating: 4.4,
+    installs: '100+ installs',
+    isProfessionalTeam: true,
+    storeLinks: [
+      { platform: 'Google Play Store', url: 'https://play.google.com/store/apps/details?id=com.Sector4Interactive.PuzzleOdyssey&hl=en_IN', label: 'Google Play Store ⭐ 4.4 stars · 100+ installs' },
+      { platform: 'App Store' }
+    ],
     features: [
-      'Challenging word puzzles with increasing difficulty levels',
-      'Cross-platform availability on iOS and Android',
-      'In-App Purchases (IAP) for hints and ad-free experience',
-      'In-App Reviews integration for user feedback',
-      'Word formation mechanics using Line Renderer and Collider2D',
-      'Persistent data management with PlayerPrefs',
-      'Immersive landscapes and calming soundtracks',
-      'Vocabulary and cognitive skills enhancement'
+      'Challenging word puzzles with increasing difficulty across all levels',
+      'Cross-platform — iOS and Android with seamless experience across devices',
+      'In-App Purchases (IAP) for hints, level unlocks, and ad-free experience',
+      'In-App Review integration to prompt user feedback at the right moment',
+      'Word formation mechanic using Line Renderer + Collider2D for accurate swipe detection',
+      'PlayFab backend for persistent player progress and high score tracking',
+      'Immersive landscapes and calming soundtracks powered by Shader Graph and Post Processing'
+    ],
+    roleContributions: [
+      'Architected the level progression system — designing the difficulty curve and managing stage flow across all game levels',
+      'Integrated Unity IAP for both iOS and Android, handling consumable purchases (hints, level unlocks) and non-consumable ad-free options with a smooth and secure transaction process',
+      'Built backend infrastructure via PlayFab — managing player save data, progress sync, high score tracking, and persistent game settings',
+      'Implemented the in-game review prompt system (Google Play + App Store) to surface feedback requests at optimal player moments',
+      'Configured and managed the Google Play Console — handling APK/AAB uploads, store listings, screenshots, and release management'
     ]
   },
   {
@@ -371,7 +363,7 @@ Persistent Data Management: Utilized PlayerPrefs to save user progress, game set
 
 const Portfolio = () => {
   useEffect(() => {
-    document.title = 'Ajith Kumar';
+    document.title = 'Ajith Kumar | Unity Game Developer';
   }, []);
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -392,6 +384,102 @@ const Portfolio = () => {
 
   const handleImageLoad = (imageUrl: string) => {
     console.log(`Successfully loaded image: ${imageUrl}`);
+  };
+
+  const getPlatformStyles = (platform: string) => {
+    switch (platform.toLowerCase()) {
+      case 'steam':
+        return {
+          bg: 'linear-gradient(135deg, #171a21 0%, #2a475e 100%)',
+          hoverBg: 'linear-gradient(135deg, #2a475e 0%, #171a21 100%)',
+          color: '#66c0f4',
+          border: '1px solid rgba(102, 192, 244, 0.4)',
+          icon: <SportsEsports sx={{ fontSize: 20 }} />,
+          name: 'Steam'
+        };
+      case 'epic games':
+      case 'epic games store':
+        return {
+          bg: 'linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%)',
+          hoverBg: 'linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%)',
+          color: '#ffffff',
+          border: '1px solid rgba(255, 255, 255, 0.3)',
+          icon: <ShoppingCart sx={{ fontSize: 20 }} />,
+          name: 'Epic Games'
+        };
+      case 'xbox':
+        return {
+          bg: 'linear-gradient(135deg, #107c10 0%, #1f9e1f 100%)',
+          hoverBg: 'linear-gradient(135deg, #1f9e1f 0%, #107c10 100%)',
+          color: '#ffffff',
+          border: '1px solid rgba(16, 124, 16, 0.5)',
+          icon: <SportsEsports sx={{ fontSize: 20 }} />,
+          name: 'Xbox'
+        };
+      case 'playstation':
+        return {
+          bg: 'linear-gradient(135deg, #003087 0%, #00439c 100%)',
+          hoverBg: 'linear-gradient(135deg, #00439c 0%, #003087 100%)',
+          color: '#ffffff',
+          border: '1px solid rgba(0, 48, 135, 0.5)',
+          icon: <SportsEsports sx={{ fontSize: 20 }} />,
+          name: 'PlayStation'
+        };
+      case 'google play store':
+      case 'google play':
+        return {
+          bg: 'linear-gradient(135deg, #0F0F0F 0%, #1F1F1F 100%)',
+          hoverBg: 'linear-gradient(135deg, #1F1F1F 0%, #0F0F0F 100%)',
+          color: '#4ecca3',
+          border: '1px solid rgba(78, 204, 163, 0.4)',
+          icon: <PlayArrow sx={{ fontSize: 20 }} />,
+          name: 'Google Play'
+        };
+      case 'app store':
+      case 'ios':
+      case 'app store (ios)':
+        return {
+          bg: 'linear-gradient(135deg, #000000 0%, #1c1c1e 100%)',
+          hoverBg: 'linear-gradient(135deg, #1c1c1e 0%, #000000 100%)',
+          color: '#ffffff',
+          border: '1px solid rgba(255, 255, 255, 0.3)',
+          icon: <Apple sx={{ fontSize: 20 }} />,
+          name: 'App Store'
+        };
+      default:
+        return {
+          bg: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
+          hoverBg: 'linear-gradient(135deg, #334155 0%, #1e293b 100%)',
+          color: '#4ecca3',
+          border: '1px solid rgba(78, 204, 163, 0.3)',
+          icon: <Launch sx={{ fontSize: 20 }} />,
+          name: platform
+        };
+    }
+  };
+
+  const renderStars = (rating: number) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalf = rating % 1 >= 0.5;
+    
+    for (let i = 1; i <= 5; i++) {
+      if (i <= fullStars) {
+        stars.push(<Star key={i} sx={{ color: '#ffb400', fontSize: '1rem' }} />);
+      } else if (i === fullStars + 1 && hasHalf) {
+        stars.push(<StarHalf key={i} sx={{ color: '#ffb400', fontSize: '1rem' }} />);
+      } else {
+        stars.push(<StarBorder key={i} sx={{ color: 'rgba(255, 180, 0, 0.3)', fontSize: '1rem' }} />);
+      }
+    }
+    return (
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.2 }}>
+        {stars}
+        <Typography variant="caption" sx={{ color: '#eeeeee', ml: 0.5, fontWeight: 'bold' }}>
+          {rating}
+        </Typography>
+      </Box>
+    );
   };
 
   const containerVariants = {
@@ -632,20 +720,55 @@ const Portfolio = () => {
                   >
                     {project.description}
                   </Typography>
-                  <Box sx={{ mt: 'auto' }}>
-                    <Chip
-                      label={project.platform}
-                      size="small"
-                      sx={{
-                        mb: 2,
-                        backgroundColor: 'rgba(78, 204, 163, 0.2)',
-                        color: '#4ecca3',
-                        border: '1px solid #4ecca3',
-                        borderRadius: '16px', // More rounded corners
-                      }}
-                    />
+                  <Box sx={{ mt: 'auto', mb: 2 }}>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1.5, mb: 1 }}>
+                      <Chip
+                        label={project.platform}
+                        size="small"
+                        sx={{
+                          backgroundColor: 'rgba(78, 204, 163, 0.2)',
+                          color: '#4ecca3',
+                          border: '1px solid #4ecca3',
+                          borderRadius: '16px',
+                        }}
+                      />
+                      {project.rating && renderStars(project.rating)}
+                    </Box>
+
+                    {/* Small Store Icons on Card */}
+                    {project.storeLinks && project.storeLinks.length > 0 && (
+                      <Box sx={{ display: 'flex', gap: 0.75, mb: 0.5, alignItems: 'center' }}>
+                        {project.storeLinks.map((link, idx) => {
+                          const styles = getPlatformStyles(link.platform);
+                          return (
+                            <Box
+                              key={idx}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                width: 24,
+                                height: 24,
+                                borderRadius: '50%',
+                                background: styles.bg,
+                                color: styles.color,
+                                border: styles.border,
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                              }}
+                              title={link.label || styles.name}
+                            >
+                              <Box sx={{ display: 'flex', '& svg': { fontSize: '0.9rem' } }}>
+                                {styles.icon}
+                              </Box>
+                            </Box>
+                          );
+                        })}
+                      </Box>
+                    )}
+                  </Box>
+                  <Box>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                      {project.technologies.map((tech, techIndex) => (
+                      {(project.cardTags || project.technologies.slice(0, 4)).map((tech, techIndex) => (
                         <Chip
                           key={techIndex}
                           label={tech}
@@ -654,7 +777,7 @@ const Portfolio = () => {
                             backgroundColor: 'rgba(30, 41, 59, 0.9)',
                             color: '#eeeeee',
                             border: '1px solid rgba(78, 204, 163, 0.3)',
-                            borderRadius: '16px', // More rounded corners
+                            borderRadius: '16px',
                             '&:hover': {
                               transform: 'translateY(-2px)',
                               boxShadow: '0 0 10px rgba(78, 204, 163, 0.3)',
@@ -694,7 +817,7 @@ const Portfolio = () => {
               borderBottom: '1px solid rgba(78, 204, 163, 0.2)',
               pb: 2
             }}>
-              {selectedProject.title}
+              {selectedProject.modalTitle || selectedProject.title}
             </DialogTitle>
             <DialogContent>
               <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 3 }}>
@@ -776,38 +899,81 @@ const Portfolio = () => {
                     </Typography>
                   </Box>
 
-                  <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
-                    Key Features
-                  </Typography>
-                  <List sx={{
-                    backgroundColor: 'rgba(78, 204, 163, 0.05)',
-                    borderRadius: 2,
-                    p: 1,
-                    mb: 3,
-                    border: '1px solid rgba(78, 204, 163, 0.1)'
-                  }}>
-                    {selectedProject.features?.map((feature, index) => (
-                      <ListItem key={index} sx={{
-                        py: 0.5,
-                        '&:not(:last-child)': {
-                          borderBottom: '1px solid rgba(78, 204, 163, 0.1)'
-                        }
+                  {selectedProject.roleContributions && selectedProject.roleContributions.length > 0 && (
+                    <>
+                      <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
+                        My Role & Contributions
+                      </Typography>
+                      <List sx={{
+                        backgroundColor: 'rgba(78, 204, 163, 0.05)',
+                        borderRadius: 2,
+                        p: 1,
+                        mb: 3,
+                        border: '1px solid rgba(78, 204, 163, 0.1)'
                       }}>
-                        <ListItemIcon sx={{ minWidth: 36 }}>
-                          <CheckCircle sx={{ color: '#4ecca3' }} />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary={feature}
-                          sx={{
-                            '& .MuiListItemText-primary': {
-                              fontSize: '0.9rem',
-                              color: '#eeeeee'
+                        {selectedProject.roleContributions.map((role, idx) => (
+                          <ListItem key={idx} sx={{
+                            py: 0.75,
+                            alignItems: 'flex-start',
+                            '&:not(:last-child)': {
+                              borderBottom: '1px solid rgba(78, 204, 163, 0.1)'
                             }
-                          }}
-                        />
-                      </ListItem>
-                    ))}
-                  </List>
+                          }}>
+                            <ListItemIcon sx={{ minWidth: 32, mt: 0.5 }}>
+                              <Star sx={{ color: '#ffb400', fontSize: '1.1rem' }} />
+                            </ListItemIcon>
+                            <ListItemText
+                              primary={role}
+                              sx={{
+                                '& .MuiListItemText-primary': {
+                                  fontSize: '0.9rem',
+                                  color: '#eeeeee',
+                                  lineHeight: 1.5
+                                }
+                              }}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </>
+                  )}
+
+                  {selectedProject.features && selectedProject.features.length > 0 && (
+                    <>
+                      <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
+                        Key Features
+                      </Typography>
+                      <List sx={{
+                        backgroundColor: 'rgba(78, 204, 163, 0.05)',
+                        borderRadius: 2,
+                        p: 1,
+                        mb: 3,
+                        border: '1px solid rgba(78, 204, 163, 0.1)'
+                      }}>
+                        {selectedProject.features.map((feature, index) => (
+                          <ListItem key={index} sx={{
+                            py: 0.5,
+                            '&:not(:last-child)': {
+                              borderBottom: '1px solid rgba(78, 204, 163, 0.1)'
+                            }
+                          }}>
+                            <ListItemIcon sx={{ minWidth: 32 }}>
+                              <CheckCircle sx={{ color: '#4ecca3', fontSize: '1.1rem' }} />
+                            </ListItemIcon>
+                            <ListItemText
+                              primary={feature}
+                              sx={{
+                                '& .MuiListItemText-primary': {
+                                  fontSize: '0.9rem',
+                                  color: '#eeeeee'
+                                }
+                              }}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </>
+                  )}
 
                   <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
                     Technologies Used
@@ -816,7 +982,7 @@ const Portfolio = () => {
                     display: 'flex',
                     flexWrap: 'wrap',
                     gap: 1,
-                    mb: 2,
+                    mb: 3,
                     backgroundColor: 'rgba(78, 204, 163, 0.05)',
                     borderRadius: 2,
                     p: 2,
@@ -831,7 +997,7 @@ const Portfolio = () => {
                           backgroundColor: 'rgba(78, 204, 163, 0.1)',
                           color: '#4ecca3',
                           border: '1px solid rgba(78, 204, 163, 0.3)',
-                          borderRadius: '16px', // More rounded corners
+                          borderRadius: '16px',
                           '&:hover': {
                             backgroundColor: 'rgba(78, 204, 163, 0.2)',
                           }
@@ -840,28 +1006,96 @@ const Portfolio = () => {
                     ))}
                   </Box>
 
+                  {selectedProject.storeLinks && selectedProject.storeLinks.length > 0 && (
+                    <Box sx={{ mb: 3 }}>
+                      <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>
+                        Available Platforms & Stores
+                      </Typography>
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
+                        {selectedProject.storeLinks.map((link, idx) => {
+                          const styles = getPlatformStyles(link.platform);
+                          const hasUrl = Boolean(link.url);
+                          return (
+                            <Box
+                              key={idx}
+                              component={hasUrl ? 'a' : 'div'}
+                              {...(hasUrl && {
+                                href: link.url,
+                                target: '_blank',
+                                rel: 'noopener noreferrer'
+                              })}
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1.5,
+                                px: 2.5,
+                                py: 1.25,
+                                borderRadius: '10px',
+                                background: styles.bg,
+                                color: styles.color,
+                                border: styles.border,
+                                textDecoration: 'none',
+                                cursor: hasUrl ? 'pointer' : 'default',
+                                opacity: hasUrl ? 1 : 0.85,
+                                transition: 'all 0.3s ease-in-out',
+                                boxShadow: '0 4px 6px rgba(0,0,0,0.15)',
+                                ...(hasUrl && {
+                                  '&:hover': {
+                                    transform: 'translateY(-3px)',
+                                    boxShadow: '0 8px 20px rgba(0,0,0,0.4)',
+                                    background: styles.hoverBg,
+                                  }
+                                })
+                              }}
+                            >
+                              <Box sx={{ display: 'flex', '& svg': { fontSize: '1.4rem' } }}>
+                                {styles.icon}
+                              </Box>
+                              <Box>
+                                <Typography variant="caption" sx={{ display: 'block', opacity: 0.6, fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 'bold', letterSpacing: '0.05em', lineHeight: 1.1 }}>
+                                  {hasUrl ? 'GET IT ON' : 'AVAILABLE ON'}
+                                </Typography>
+                                <Typography variant="body2" sx={{ fontWeight: 'bold', fontSize: '0.9rem', lineHeight: 1.2 }}>
+                                  {link.label || styles.name}
+                                </Typography>
+                              </Box>
+                            </Box>
+                          );
+                        })}
+                      </Box>
+                    </Box>
+                  )}
+
                   <Box sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 1,
-                    mt: 2,
+                    gap: 1.5,
+                    mt: 3,
                     backgroundColor: 'rgba(78, 204, 163, 0.05)',
                     borderRadius: 2,
                     p: 2,
                     border: '1px solid rgba(78, 204, 163, 0.1)'
                   }}>
                     <Devices sx={{ color: '#4ecca3' }} />
-                    <Typography variant="body2" sx={{ color: '#4ecca3' }}>
+                    <Typography variant="body2" sx={{ color: '#4ecca3', fontWeight: 'bold' }}>
                       Platform: {selectedProject.platform}
                     </Typography>
                   </Box>
+
+                  {selectedProject.isProfessionalTeam && (
+                    <Typography variant="body2" sx={{ fontStyle: 'italic', color: '#eeeeee', opacity: 0.6, mt: 3, textAlign: 'right' }}>
+                      Developed as part of a professional team.
+                    </Typography>
+                  )}
                 </Box>
               </Box>
             </DialogContent>
             <DialogActions sx={{
               borderTop: '1px solid rgba(78, 204, 163, 0.2)',
               px: 3,
-              py: 2
+              py: 2,
+              flexWrap: 'wrap',
+              gap: 1.5
             }}>
               {selectedProject.githubUrl && (
                 <Button
@@ -871,15 +1105,62 @@ const Portfolio = () => {
                   rel="noopener noreferrer"
                   sx={{
                     color: '#4ecca3',
+                    border: '1px solid rgba(78, 204, 163, 0.2)',
+                    borderRadius: '8px',
+                    textTransform: 'none',
+                    fontWeight: 'bold',
                     '&:hover': {
                       backgroundColor: 'rgba(78, 204, 163, 0.1)',
+                      borderColor: '#4ecca3',
                     }
                   }}
                 >
                   View Code
                 </Button>
               )}
-              {selectedProject.liveUrl && (
+
+              {selectedProject.storeLinks && selectedProject.storeLinks.map((link, idx) => {
+                const styles = getPlatformStyles(link.platform);
+                if (!link.url) return null;
+                
+                const buttonLabel = 
+                  link.platform.toLowerCase().includes('steam') ? 'View on Steam' :
+                  link.platform.toLowerCase().includes('play') ? 'View on Play Store' :
+                  link.platform.toLowerCase().includes('epic') ? 'View on Epic Games' :
+                  link.platform.toLowerCase().includes('apple') || link.platform.toLowerCase().includes('app store') ? 'View on App Store' :
+                  `View on ${styles.name}`;
+
+                return (
+                  <Button
+                    key={idx}
+                    startIcon={styles.icon}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      background: styles.bg,
+                      color: styles.color,
+                      border: styles.border,
+                      borderRadius: '8px',
+                      px: 2.5,
+                      py: 0.75,
+                      textTransform: 'none',
+                      fontSize: '0.85rem',
+                      fontWeight: 'bold',
+                      transition: 'all 0.3s ease-in-out',
+                      '&:hover': {
+                        background: styles.hoverBg,
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                      }
+                    }}
+                  >
+                    {buttonLabel}
+                  </Button>
+                );
+              })}
+
+              {selectedProject.liveUrl && (!selectedProject.storeLinks || !selectedProject.storeLinks.some(l => l.url === selectedProject.liveUrl)) && (
                 <Button
                   startIcon={<Launch />}
                   href={selectedProject.liveUrl}
@@ -887,18 +1168,27 @@ const Portfolio = () => {
                   rel="noopener noreferrer"
                   sx={{
                     color: '#4ecca3',
+                    border: '1px solid rgba(78, 204, 163, 0.2)',
+                    borderRadius: '8px',
+                    textTransform: 'none',
+                    fontWeight: 'bold',
                     '&:hover': {
                       backgroundColor: 'rgba(78, 204, 163, 0.1)',
+                      borderColor: '#4ecca3',
                     }
                   }}
                 >
                   Live Demo
                 </Button>
               )}
+
               <Button
                 onClick={handleCloseDialog}
                 sx={{
                   color: '#4ecca3',
+                  ml: 'auto',
+                  fontWeight: 'bold',
+                  textTransform: 'none',
                   '&:hover': {
                     backgroundColor: 'rgba(78, 204, 163, 0.1)',
                   }

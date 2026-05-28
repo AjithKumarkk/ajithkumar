@@ -29,9 +29,76 @@ interface Project {
     url?: string;
     label?: string;
   }[];
+  isComingSoon?: boolean;
+  comingSoonDate?: string;
+  isNextFestParticipant?: boolean;
+  isOfficiallyCredited?: boolean;
+  languagesCount?: number;
+  wishlistUrl?: string;
+  professionalTeamText?: string;
 }
 
 const projects: Project[] = [
+  {
+    title: 'Rotted – A Brain Rot Simulator',
+    modalTitle: 'Rotted – A Brain Rot Simulator',
+    description: 'A dark-comedy survival roguelite where your attention is the only currency that matters. Swat roaches, dodge guilt trips from Mom, pay rent, and stack your Brain Rot meter to 100% — then do it again. Features a live global leaderboard and 33-language support. Releasing June 25, 2026 on Steam.',
+    longDescription: 'Rotted is a satirical survival roguelite developed by Sector4Interactive, releasing on Steam on June 25, 2026 — and selected to participate in Steam Next Fest. Players scroll a tiered content feed to reach peak Brain Rot while real-life chaos interrupts: roaches multiply, rent texts get aggressive, Mom keeps calling, and chores pile up. Every run rewards upgrade picks from 40+ boons and 7 persistent upgrades, feeding into a live global leaderboard tracking every player\'s ascent worldwide. The game supports 33 languages across interface, audio, and subtitles.',
+    image: `${process.env.PUBLIC_URL}/assets/rotted/Header.png`,
+    technologies: [
+      'Unity',
+      'C#',
+      'Steam Achievements',
+      'Steam Cloud',
+      'Steam Leaderboards',
+      'Steamworks SDK',
+      'Localization',
+      'Roguelite Systems',
+      'Procedural Generation'
+    ],
+    cardTags: [
+      'Unity',
+      'C#',
+      'Steam Achievements',
+      'Steam Cloud',
+      'Steam Leaderboards',
+      'Localization',
+      'Roguelite'
+    ],
+    platform: 'PC (Steam)',
+    liveUrl: 'https://store.steampowered.com/app/4474330/Rotted__A_Brain_Rot_Simulator/',
+    isComingSoon: true,
+    comingSoonDate: 'Jun 25, 2026',
+    isNextFestParticipant: true,
+    isOfficiallyCredited: true,
+    languagesCount: 33,
+    wishlistUrl: 'https://store.steampowered.com/app/4474330/Rotted__A_Brain_Rot_Simulator/',
+    storeLinks: [
+      {
+        platform: 'Steam',
+        url: 'https://store.steampowered.com/app/4474330/Rotted__A_Brain_Rot_Simulator/',
+        label: 'Steam (Wishlist Now)'
+      }
+    ],
+    features: [
+      'Survival roguelite with dark-comedy theme and satirical real-life interruptions',
+      '40+ boons and upgrades per run, with 7 persistent cross-run upgrades',
+      'Live global leaderboard — real-time Brain Rot tracker across all players worldwide',
+      'Steam Achievements, Steam Cloud Save, and Steam Leaderboards fully integrated',
+      '33 languages supported — one of the widest localization scopes for an indie title',
+      'Procedurally structured runs with meaningful upgrade choices each loop',
+      'Dark humor narrative with escalating difficulty and chain-loop replayability'
+    ],
+    roleContributions: [
+      'Designed and implemented the Task/Chores system — the core real-life interruption mechanics that challenge players to balance responsibilities against their Brain Rot meter progression',
+      'Built and maintained the Boon/Upgrade system — implementing all 40+ upgrade cards and ensuring they apply correctly to game state, stack with persistent upgrades, and integrate cleanly with roguelite run logic',
+      'Integrated the complete Steam platform layer — Steam Achievements, Steam Cloud Save, and Steam Leaderboards, including the live global leaderboard that tracks all players\' Brain Rot scores in real time',
+      'Led language localization for all 33 supported languages — managing interface, subtitle, and audio localization pipelines across English, Japanese, Korean, Arabic, Hindi, Malayalam, Tamil, and 25+ more languages',
+      'Officially credited in the game\'s release'
+    ],
+    isProfessionalTeam: true,
+    professionalTeamText: 'Developed as part of the Sector4Interactive team.'
+  },
   {
     title: 'The Curse 404',
     modalTitle: 'The Curse 404 — A Descent into Digital Madness',
@@ -618,6 +685,56 @@ const Portfolio = () => {
                       height: '250px'
                     }}
                   />
+                  {project.isComingSoon && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 12,
+                        left: 12,
+                        zIndex: 2,
+                        background: 'linear-gradient(135deg, #00f2fe 0%, #4ecca3 100%)',
+                        color: '#1a1a2e',
+                        fontWeight: 'bold',
+                        fontSize: '0.72rem',
+                        px: 1.25,
+                        py: 0.5,
+                        borderRadius: '4px',
+                        boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                      }}
+                    >
+                      🟢 Coming Soon — {project.comingSoonDate}
+                    </Box>
+                  )}
+                  {project.isNextFestParticipant && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 12,
+                        right: 12,
+                        zIndex: 2,
+                        background: 'linear-gradient(135deg, #1b2838 0%, #2a475e 100%)',
+                        color: '#66c0f4',
+                        fontWeight: 'bold',
+                        fontSize: '0.72rem',
+                        px: 1.25,
+                        py: 0.5,
+                        borderRadius: '4px',
+                        boxShadow: '0 4px 8px rgba(0,0,0,0.4)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5,
+                        border: '1px solid rgba(102, 192, 244, 0.4)',
+                      }}
+                    >
+                      🎮 Steam Next Fest Participant
+                    </Box>
+                  )}
                   {imageError[project.image] && (
                     <Box
                       sx={{
@@ -710,6 +827,26 @@ const Portfolio = () => {
                   >
                     {project.title}
                   </Typography>
+                  {project.isOfficiallyCredited && (
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1.5 }}>
+                      <Chip
+                        icon={<Star sx={{ color: '#ffd700 !important', fontSize: '0.9rem !important' }} />}
+                        label="Officially Credited in Release"
+                        size="small"
+                        sx={{
+                          backgroundColor: 'rgba(255, 215, 0, 0.12)',
+                          color: '#ffd700',
+                          border: '1px solid rgba(255, 215, 0, 0.25)',
+                          fontSize: '0.72rem',
+                          fontWeight: 'bold',
+                          height: '22px',
+                          '& .MuiChip-icon': {
+                            color: '#ffd700',
+                          }
+                        }}
+                      />
+                    </Box>
+                  )}
                   <Typography
                     variant="body2"
                     sx={{
@@ -732,6 +869,20 @@ const Portfolio = () => {
                           borderRadius: '16px',
                         }}
                       />
+                      {project.languagesCount && (
+                        <Chip
+                          label={`🌐 ${project.languagesCount} Languages Supported`}
+                          size="small"
+                          sx={{
+                            backgroundColor: 'rgba(102, 192, 244, 0.15)',
+                            color: '#66c0f4',
+                            border: '1px solid rgba(102, 192, 244, 0.3)',
+                            borderRadius: '16px',
+                            fontWeight: 'bold',
+                            fontSize: '0.72rem'
+                          }}
+                        />
+                      )}
                       {project.rating && renderStars(project.rating)}
                     </Box>
 
@@ -789,6 +940,35 @@ const Portfolio = () => {
                       ))}
                     </Box>
                   </Box>
+                  {project.isComingSoon && project.wishlistUrl && (
+                    <Button
+                      variant="contained"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.wishlistUrl, '_blank', 'noopener,noreferrer');
+                      }}
+                      sx={{
+                        mt: 2.5,
+                        width: '100%',
+                        background: 'linear-gradient(135deg, #1b2838 0%, #2a475e 100%)',
+                        color: '#c7d5e0',
+                        border: '1px solid rgba(102, 192, 244, 0.4)',
+                        fontWeight: 'bold',
+                        textTransform: 'none',
+                        borderRadius: '8px',
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                        '&:hover': {
+                          background: 'linear-gradient(135deg, #2a475e 0%, #171a21 100%)',
+                          color: '#ffffff',
+                          borderColor: '#66c0f4',
+                          boxShadow: '0 0 15px rgba(102, 192, 244, 0.5)',
+                        },
+                        transition: 'all 0.2s ease-in-out',
+                      }}
+                    >
+                      ☆ Wishlist on Steam
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
@@ -1084,7 +1264,7 @@ const Portfolio = () => {
 
                   {selectedProject.isProfessionalTeam && (
                     <Typography variant="body2" sx={{ fontStyle: 'italic', color: '#eeeeee', opacity: 0.6, mt: 3, textAlign: 'right' }}>
-                      Developed as part of a professional team.
+                      {selectedProject.professionalTeamText || "Developed as part of a professional team."}
                     </Typography>
                   )}
                 </Box>
@@ -1124,6 +1304,7 @@ const Portfolio = () => {
                 if (!link.url) return null;
                 
                 const buttonLabel = 
+                  selectedProject.isComingSoon && link.platform.toLowerCase().includes('steam') ? 'Wishlist on Steam' :
                   link.platform.toLowerCase().includes('steam') ? 'View on Steam' :
                   link.platform.toLowerCase().includes('play') ? 'View on Play Store' :
                   link.platform.toLowerCase().includes('epic') ? 'View on Epic Games' :

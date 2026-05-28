@@ -1,14 +1,84 @@
 # Project Details
 
 This document contains information on the main portfolio page components and the modal popup details (About Project, Key Features, Technologies Used, and Platform) for the following projects:
-1. **The Curse 404**
-2. **Fast Gear**
-3. **Superdash - No Wifi Games**
-4. **Puzzle Odyssey**
+1. **Rotted – A Brain Rot Simulator**
+2. **The Curse 404**
+3. **Fast Gear**
+4. **Superdash - No Wifi Games**
+5. **Puzzle Odyssey**
 
 ---
 
-## 1. The Curse 404
+## 1. Rotted – A Brain Rot Simulator
+
+### Main Page Display
+- **Project Name**: Rotted – A Brain Rot Simulator
+- **Main Description**: A dark-comedy survival roguelite where your attention is the only currency that matters. Swat roaches, dodge guilt trips from Mom, pay rent, and stack your Brain Rot meter to 100% — then do it again. Features a live global leaderboard and 33-language support. Releasing June 25, 2026 on Steam.
+- **Main Tags**:
+  - **Platform**: `PC (Steam)`
+  - **Technologies**: `Unity`, `C#`, `Steam Achievements`, `Steam Cloud`, `Steam Leaderboards`, `Localization`, `Roguelite`
+  - **Special Badges**: `🟢 Coming Soon — Jun 25, 2026`, `🎮 Steam Next Fest Participant`, `🏅 Officially Credited in Release`
+
+### Modal Popup Details
+- **About Project**:
+  ```text
+  Rotted – A Brain Rot Simulator
+
+  Project Overview:
+  Rotted is a satirical survival roguelite developed by Sector4Interactive, releasing on Steam on June 25, 2026 — and selected to participate in Steam Next Fest. Players scroll a tiered content feed to reach peak Brain Rot while real-life chaos interrupts: roaches multiply, rent texts get aggressive, Mom keeps calling, and chores pile up. Every run rewards upgrade picks from 40+ boons and 7 persistent upgrades, feeding into a live global leaderboard tracking every player's ascent worldwide. The game supports 33 languages across interface, audio, and subtitles.
+
+  My Role & Contributions:
+  • Designed and implemented the Task/Chores system — the core real-life interruption mechanics that challenge players to balance responsibilities against their Brain Rot meter progression
+  • Built and maintained the Boon/Upgrade system — implementing all 40+ upgrade cards and ensuring they apply correctly to game state, stack with persistent upgrades, and integrate cleanly with roguelite run logic
+  • Integrated the complete Steam platform layer — Steam Achievements, Steam Cloud Save, and Steam Leaderboards, including the live global leaderboard that tracks all players' Brain Rot scores in real time
+  • Led language localization for all 33 supported languages — managing interface, subtitle, and audio localization pipelines across English, Japanese, Korean, Arabic, Hindi, Malayalam, Tamil, and 25+ more languages
+  • Officially credited in the game's release
+
+  Key Features:
+  • Survival roguelite with dark-comedy theme and satirical real-life interruptions
+  • 40+ boons and upgrades per run, with 7 persistent cross-run upgrades
+  • Live global leaderboard — real-time Brain Rot tracker across all players worldwide
+  • Steam Achievements, Steam Cloud Save, and Steam Leaderboards fully integrated
+  • 33 languages supported — one of the widest localization scopes for an indie title
+  • Procedurally structured runs with meaningful upgrade choices each loop
+  • Dark humor narrative with escalating difficulty and chain-loop replayability
+
+  Technical Stack:
+  • Unity (Game Engine)
+  • C# (Programming)
+  • Steam Achievements
+  • Steam Cloud
+  • Steam Leaderboards
+  • Steamworks SDK
+  • Localization
+  • Roguelite Systems
+  • Procedural Generation
+  ```
+- **Key Features**:
+  * Survival roguelite with dark-comedy theme and satirical real-life interruptions
+  * 40+ boons and upgrades per run, with 7 persistent cross-run upgrades
+  * Live global leaderboard — real-time Brain Rot tracker across all players worldwide
+  * Steam Achievements, Steam Cloud Save, and Steam Leaderboards fully integrated
+  * 33 languages supported — one of the widest localization scopes for an indie title
+  * Procedurally structured runs with meaningful upgrade choices each loop
+  * Dark humor narrative with escalating difficulty and chain-loop replayability
+- **Technologies Used**:
+  * Unity
+  * C#
+  * Steam Achievements
+  * Steam Cloud
+  * Steam Leaderboards
+  * Steamworks SDK
+  * Localization
+  * Roguelite Systems
+  * Procedural Generation
+- **Platform**: `PC (Steam)`
+- **Store Links**:
+  * Steam: [Steam Store Page](https://store.steampowered.com/app/4474330/Rotted__A_Brain_Rot_Simulator/)
+
+---
+
+## 2. The Curse 404
 
 ### Main Page Display
 - **Project Name**: The Curse 404
@@ -82,7 +152,7 @@ This document contains information on the main portfolio page components and the
 
 ---
 
-## 2. Fast Gear
+## 3. Fast Gear
 
 ### Main Page Display
 - **Project Name**: Fast Gear
@@ -136,7 +206,7 @@ This document contains information on the main portfolio page components and the
 
 ---
 
-## 3. Superdash - No Wifi Games
+## 4. Superdash - No Wifi Games
 
 ### Main Page Display
 - **Project Name**: Superdash - No Wifi Games
@@ -181,7 +251,7 @@ This document contains information on the main portfolio page components and the
 
 ---
 
-## 4. Puzzle Odyssey
+## 5. Puzzle Odyssey
 
 ### Main Page Display
 - **Project Name**: Puzzle Odyssey

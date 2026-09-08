@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, CardContent, CardMedia, Typography, Box, IconButton, Chip, Dialog, DialogTitle, DialogContent, DialogActions, Button, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, ImageList, ImageListItem } from '@mui/material';
+import { Container, Card, CardContent, CardMedia, Typography, Box, IconButton, Chip, Dialog, DialogTitle, DialogContent, DialogActions, Button, List, ListItem, ListItemIcon, ListItemText, ImageList, ImageListItem } from '@mui/material';
 import { motion } from 'framer-motion';
-import { GitHub, Launch, SportsEsports, Code, Devices, Star, StarHalf, StarBorder, CheckCircle, PlayArrow, Apple, ShoppingCart } from '@mui/icons-material';
+import { GitHub, Launch, SportsEsports, Code, Devices, Star, StarHalf, StarBorder, CheckCircle, PlayArrow, Apple, ShoppingCart, YouTube } from '@mui/icons-material';
 
 interface Project {
   title: string;
+  category: 'industrial' | 'interactive' | 'personal';
   description: string;
   image: string;
   images?: {
@@ -15,6 +16,8 @@ interface Project {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  youtubeVideoId?: string;
+  youtubeUrl?: string;
   platform: string;
   features?: string[];
   longDescription?: string;
@@ -40,10 +43,58 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Mazeflower Music App',
+    category: 'industrial',
+    modalTitle: 'Mazeflower — Interactive Planetary Music Experience',
+    description: 'A Unity-based interactive planet experience where users explore 3D planets and discover music & social content through interactive stickers. Features planetary navigation, spatial content placement, and persistent audio playback.',
+    longDescription: 'A Unity-based interactive planet experience where users can explore 3D planets and discover music and social content through interactive stickers. Each user is represented as a globe. The project combines planetary navigation, spatial content placement, and a persistent music playback system to create an immersive way to explore songs, artists, mixtapes, and planet anthems.',
+    image: `${process.env.PUBLIC_URL}/assets/mazeflower/cover.png`,
+    technologies: [
+      'Unity 3D',
+      'C#',
+      '3D/Spatial UI',
+      'Audio Streaming (.m3u8/HLS)',
+      'Mobile Touch Interaction',
+      'UI/UX Design',
+      'Performance & Debugging'
+    ],
+    cardTags: [
+      'Unity 3D',
+      'C#',
+      'Audio Streaming (.m3u8/HLS)',
+      '3D/Spatial UI'
+    ],
+    platform: 'Mobile (iOS & Android)',
+    isProfessionalTeam: true,
+    professionalTeamText: 'Industrial Interactive Music Experience.',
+    features: [
+      'Interactive 3D planet navigation and pinch-to-zoom controls',
+      'Interactive stickers for songs, artists, mixtapes, and planet anthems',
+      'Mini music player with persistent playback across planet & globe navigation',
+      'Integrated .m3u8/HLS audio streaming into the playback system',
+      'Sticker projection, positioning, scaling, and visual differentiation with custom borders',
+      'Optimized touch interactions, resolving gesture & navigation conflicts',
+      'Balanced sticker distribution across planetary surface to prevent visual clustering'
+    ],
+    roleContributions: [
+      'Developed interactive 3D planet navigation and pinch-to-zoom controls',
+      'Implemented interactive stickers for songs, artists, mixtapes, and other content',
+      'Built and refined a mini music player with persistent playback across planet and globe navigation',
+      'Integrated .m3u8/HLS audio streaming into the playback system',
+      'Implemented Planet Anthem playback and mini-player controls',
+      'Improved sticker projection, positioning, scaling, resolution, and visual consistency across the planet surface',
+      'Added visual differentiation between sticker types using custom borders and styling',
+      'Fixed complex touch interaction, accidental playback, zoom, and navigation conflicts',
+      'Improved sticker distribution across the planet to reduce clustering and visual clutter',
+      'Performed extensive debugging, interaction testing, and stability improvements across the Planet experience'
+    ]
+  },
+  {
     title: 'Rotted – A Brain Rot Simulator',
+    category: 'industrial',
     modalTitle: 'Rotted – A Brain Rot Simulator',
-    description: 'A dark-comedy survival roguelite where your attention is the only currency that matters. Swat roaches, dodge guilt trips from Mom, pay rent, and stack your Brain Rot meter to 100% — then do it again. Features a live global leaderboard and 33-language support. Releasing June 25, 2026 on Steam.',
-    longDescription: 'Rotted is a satirical survival roguelite developed by Sector4Interactive, releasing on Steam on June 25, 2026 — and selected to participate in Steam Next Fest. Players scroll a tiered content feed to reach peak Brain Rot while real-life chaos interrupts: roaches multiply, rent texts get aggressive, Mom keeps calling, and chores pile up. Every run rewards upgrade picks from 40+ boons and 7 persistent upgrades, feeding into a live global leaderboard tracking every player\'s ascent worldwide. The game supports 33 languages across interface, audio, and subtitles.',
+    description: 'A dark-comedy survival roguelite where your attention is the only currency that matters. Swat roaches, dodge guilt trips from Mom, pay rent, and stack your Brain Rot meter to 100% — then do it again. Features a live global leaderboard and 33-language support. Coming soon on Steam.',
+    longDescription: 'Rotted is a satirical survival roguelite developed by Sector4Interactive, coming soon to Steam — and selected to participate in Steam Next Fest. Players scroll a tiered content feed to reach peak Brain Rot while real-life chaos interrupts: roaches multiply, rent texts get aggressive, Mom keeps calling, and chores pile up. Every run rewards upgrade picks from 40+ boons and 7 persistent upgrades, feeding into a live global leaderboard tracking every player\'s ascent worldwide. The game supports 33 languages across interface, audio, and subtitles.',
     image: `${process.env.PUBLIC_URL}/assets/rotted/Header.png`,
     technologies: [
       'Unity',
@@ -68,7 +119,6 @@ const projects: Project[] = [
     platform: 'PC (Steam)',
     liveUrl: 'https://store.steampowered.com/app/4474330/Rotted__A_Brain_Rot_Simulator/',
     isComingSoon: true,
-    comingSoonDate: 'Jun 25, 2026',
     isNextFestParticipant: true,
     isOfficiallyCredited: true,
     languagesCount: 33,
@@ -101,6 +151,7 @@ const projects: Project[] = [
   },
   {
     title: 'The Curse 404',
+    category: 'industrial',
     modalTitle: 'The Curse 404 — A Descent into Digital Madness',
     description: 'A first-person psychological horror game built in Unity that focuses on atmosphere, tension, and player-driven fear. The game dynamically reacts to player behavior, increasing anxiety through environmental changes and unsettling narrative feedback.',
     longDescription: 'The Curse 404 is a first-person psychological horror game released on Steam, Epic Games, Xbox, and PlayStation. Rather than relying on traditional jump scares, the game builds dread by dynamically reacting to how you play — increasing anxiety through environmental shifts, interactive elements, and sarcastic, unsettling narrative feedback. Both a free demo and the full version are available across all platforms.',
@@ -152,6 +203,7 @@ const projects: Project[] = [
   },
   {
     title: 'Escape Room',
+    category: 'interactive',
     description: 'An immersive educational puzzle game that combines digital interactions with physical hardware control. Players solve interconnected puzzles about hydroponics and plant science while experiencing real-world feedback through automated door controls.',
     longDescription: `Educational Escape Room Experience
 
@@ -247,7 +299,67 @@ Technical Stack
     ]
   },
   {
+    title: 'Facilig SafetyWhat Showcase',
+    category: 'interactive',
+    modalTitle: 'Facilig SafetyWhat — Interactive Safety System Showcase',
+    description: 'An interactive 3D demonstration application designed to showcase how the Facilig safety system works. Allows users to explore facility safety zones, trigger alert demonstrations, and switch between dynamic camera perspectives.',
+    longDescription: `Facilig SafetyWhat is an interactive 3D demonstration and simulation application built in Unity for Windows desktop. The project was created to showcase how the Facilig safety and security system operates, providing an intuitive, hands-on way for clients and stakeholders to understand its monitoring workflows, camera perspectives, and alert capabilities.
+
+Rather than being a live operational surveillance tool, this application serves as an interactive product demonstration. Users can navigate an interactive facility environment, switch between multiple camera angles—including wide perimeter views, elevated vantage points, and localized CCTV cameras—and observe how the system visualizes active safety zones.
+
+To demonstrate incident handling, the application allows users to simulate safety alerts in real time. When a safety trigger occurs in a designated zone, the interface displays visual warning indicators on the operator HUD, enabling users to switch directly to the affected camera view and see how the Facilig safety system alerts personnel.`,
+    image: `${process.env.PUBLIC_URL}/assets/facilig-safety/Thumbnail.png`,
+    images: [
+      {
+        url: `${process.env.PUBLIC_URL}/assets/facilig-safety/Thumbnail.png`,
+        alt: 'Facilig SafetyWhat Interactive Showcase Thumbnail',
+        source: 'local'
+      }
+    ],
+    youtubeVideoId: 'DTXcwd1cXgc',
+    youtubeUrl: 'https://youtu.be/DTXcwd1cXgc',
+    technologies: [
+      'Unity 3D',
+      'C#',
+      'Interactive 3D Demo',
+      'Multi-Camera Systems',
+      'Interactive UI/UX',
+      'System Simulation',
+      'Windows Desktop'
+    ],
+    cardTags: [
+      'Unity 3D',
+      'C#',
+      'Interactive Demo',
+      'Simulation'
+    ],
+    platform: 'PC (Windows)',
+    features: [
+      'Interactive 3D demonstration illustrating how the Facilig safety system functions',
+      'Multi-camera perspective switching showcasing facility coverage and camera angles',
+      'Interactive safety alert demonstration visualizing simulated hazard triggers and incident states',
+      'Intuitive presentation-ready operator HUD designed for client walkthroughs and demonstrations',
+      'Zone-based status indicators displaying active, safe, and alert states in real time',
+      'Standalone Windows desktop application optimized for smooth presentation and responsive user interaction'
+    ],
+    roleContributions: [
+      'Sole programmer for the entire project, developing the interactive showcase application from scratch in Unity and C#',
+      'Designed and implemented the interactive user interface (UI) and demonstration workflow',
+      'Engineered the multi-camera viewport switching system to provide dynamic perspective transitions',
+      'Built the interactive safety alert demonstration mechanics and zone status visual indicators',
+      'Optimized runtime performance and rendering for a smooth 60 FPS presentation on Windows desktop'
+    ],
+    storeLinks: [
+      {
+        platform: 'youtube',
+        url: 'https://youtu.be/DTXcwd1cXgc',
+        label: 'Watch Video Demo'
+      }
+    ]
+  },
+  {
     title: 'Fast Gear',
+    category: 'industrial',
     modalTitle: 'Fast Gear — Ultimate Racing Experience',
     description: 'Fast Gear is a high-intensity 3D car racing game offering both thrilling single-player career modes and competitive real-time online multiplayer. Master realistic driving physics and race through dynamic tracks across cities, deserts, and forests. Released on Steam, Epic Games, Xbox, and PlayStation.',
     longDescription: 'Fast Gear is a multi-platform 3D racing game built in Unity, available on Steam, Epic Games, Xbox, and PlayStation. Players choose from a wide garage of high-performance vehicles and compete across diverse environments — urban streets, deserts, forests, and mountain highways. The game supports both an offline single-player career and real-time online PvP multiplayer, delivering a complete racing experience across skill levels.',
@@ -298,6 +410,7 @@ Technical Stack
   },
   {
     title: 'Superdash - No Wifi Games',
+    category: 'industrial',
     modalTitle: 'Superdash – Play Anywhere, No Internet Needed',
     description: 'Superdash is an offline-first hyper-casual mobile game featuring vibrant merge-and-match gameplay with intuitive swipe controls. Designed for play anywhere without an internet connection, the game rewards performance with a star rating system that keeps players coming back.',
     longDescription: 'Superdash is a hyper-casual mobile game built for offline play — no internet required. Players merge objects of the same color to advance through progressively harder time-based puzzles, with smooth swipe controls and a star rating system that motivates replay. Designed around simplicity and rapid engagement, Superdash is optimized for mobile performance and broad accessibility.',
@@ -340,6 +453,7 @@ Technical Stack
   },
   {
     title: 'Puzzle Odyssey',
+    category: 'industrial',
     modalTitle: 'Puzzle Odyssey — Words Meet Wonder',
     description: 'Puzzle Odyssey is an immersive cross-platform word puzzle game that blends challenging vocabulary gameplay with beautiful landscapes and calming soundtracks. Players swipe through letter grids to discover hidden words across stunning environments — available on iOS and Android.',
     longDescription: 'Puzzle Odyssey challenges players to discover hidden words by connecting letters across a grid, set against immersive landscapes and relaxing soundtracks. Launched on both iOS and Android, the game blends vocabulary training with visually stunning environments — designed for puzzle enthusiasts who want both mental stimulation and a calming experience. Monetized through Unity IAP with a smooth, fair purchase flow.',
@@ -391,6 +505,7 @@ Technical Stack
   },
   {
     title: 'Rogue Runner',
+    category: 'personal',
     description: `The Rogue Runner is a side-scrolling\nadventure where players navigate\nthrough challenging levels by\nrunning, jumping, and avoiding\nobstacles. The game typically\ninvolves controlling a character that\nmoves across various terrains,\novercoming enemies, and collecting\nrewards.`,
     image: 'https://i.imgur.com/iPHAKwy.png',
     technologies: ['Grid', 'Coin Collection', 'StateMachine'],
@@ -399,6 +514,7 @@ Technical Stack
   },
   {
     title: 'Joy Runner',
+    category: 'personal',
     description: `The Joy Runner Game is a fast-\npaced, action-packed game where\nplayers control a character that\ncontinuously moves forward, avoiding\nobstacles and collecting rewards. The\ngoal is to survive as long as possible\nwhile navigating through dynamically\ngenerated environments. As the\ngame progresses, the speed and\ndifficulty increase, challenging\nplayers to react quickly and stay\nfocused.`,
     image: 'https://i.imgur.com/qhLziIb.png',
     technologies: ['Endless Runner'],
@@ -407,6 +523,7 @@ Technical Stack
   },
   {
     title: 'Tetris 2D',
+    category: 'personal',
     description: `This is a Tetris-inspired game created\nin Unity where players control falling\nblocks. The goal is to complete\nhorizontal lines by placing blocks in a\n10x20 grid. When a line is filled, it\nclears, and the player earns points.\nThe game ends when the blocks\nstack up to the top. Scores are saved,\nand the player can view their high\nscores.`,
     image: 'https://i.imgur.com/X1LJy18.png',
     images: [
@@ -434,7 +551,45 @@ const Portfolio = () => {
   }, []);
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeCategory, setActiveCategory] = useState<'all' | 'industrial' | 'interactive' | 'personal'>('all');
   const [imageError, setImageError] = useState<{ [key: string]: boolean }>({});
+
+  const getCategoryInfo = (cat: string) => {
+    switch (cat) {
+      case 'industrial':
+        return {
+          label: '🏢 Industrial & Studio',
+          shortLabel: '🏢 Industrial Project',
+          color: '#4ecca3',
+          bg: 'rgba(78, 204, 163, 0.15)',
+          border: '1px solid rgba(78, 204, 163, 0.4)'
+        };
+      case 'interactive':
+        return {
+          label: '⚡ Interactive & Simulation',
+          shortLabel: '⚡ Interactive App',
+          color: '#00f2fe',
+          bg: 'rgba(0, 242, 254, 0.15)',
+          border: '1px solid rgba(0, 242, 254, 0.4)'
+        };
+      case 'personal':
+        return {
+          label: '🕹️ Personal & Indie',
+          shortLabel: '🕹️ Personal Project',
+          color: '#a855f7',
+          bg: 'rgba(168, 85, 247, 0.15)',
+          border: '1px solid rgba(168, 85, 247, 0.4)'
+        };
+      default:
+        return {
+          label: 'All Projects',
+          shortLabel: 'Project',
+          color: '#4ecca3',
+          bg: 'rgba(78, 204, 163, 0.15)',
+          border: '1px solid rgba(78, 204, 163, 0.4)'
+        };
+    }
+  };
 
   const handleOpenDialog = (project: Project) => {
     setSelectedProject(project);
@@ -512,6 +667,16 @@ const Portfolio = () => {
           border: '1px solid rgba(255, 255, 255, 0.3)',
           icon: <Apple sx={{ fontSize: 20 }} />,
           name: 'App Store'
+        };
+      case 'youtube':
+      case 'video':
+        return {
+          bg: 'linear-gradient(135deg, #280000 0%, #cc0000 100%)',
+          hoverBg: 'linear-gradient(135deg, #cc0000 0%, #ff0000 100%)',
+          color: '#ffffff',
+          border: '1px solid rgba(255, 0, 0, 0.5)',
+          icon: <YouTube sx={{ fontSize: 20, color: '#ffffff' }} />,
+          name: 'YouTube'
         };
       default:
         return {
@@ -627,6 +792,62 @@ const Portfolio = () => {
           </Typography>
         </Box>
 
+        {/* Category Filter Pills Bar */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1.5, mb: 6, px: 2 }}>
+          {[
+            { key: 'all', label: 'All Projects', count: projects.length },
+            { key: 'industrial', label: '🏢 Industrial & Studio', count: projects.filter(p => p.category === 'industrial').length },
+            { key: 'interactive', label: '⚡ Interactive & Simulation', count: projects.filter(p => p.category === 'interactive').length },
+            { key: 'personal', label: '🕹️ Personal & Indie', count: projects.filter(p => p.category === 'personal').length },
+          ].map(tab => {
+            const isActive = activeCategory === tab.key;
+            return (
+              <Button
+                key={tab.key}
+                onClick={() => setActiveCategory(tab.key as any)}
+                sx={{
+                  px: 2.5,
+                  py: 1,
+                  borderRadius: '24px',
+                  textTransform: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '0.88rem',
+                  color: isActive ? '#1a1a2e' : '#eeeeee',
+                  background: isActive
+                    ? 'linear-gradient(135deg, #00f2fe 0%, #4ecca3 100%)'
+                    : 'rgba(30, 41, 59, 0.7)',
+                  border: isActive
+                    ? '1px solid #4ecca3'
+                    : '1px solid rgba(255, 255, 255, 0.15)',
+                  boxShadow: isActive ? '0 0 15px rgba(78, 204, 163, 0.5)' : 'none',
+                  backdropFilter: 'blur(8px)',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-2px)',
+                    background: isActive
+                      ? 'linear-gradient(135deg, #00f2fe 0%, #4ecca3 100%)'
+                      : 'rgba(78, 204, 163, 0.2)',
+                  }
+                }}
+              >
+                {tab.label}
+                <Chip
+                  label={tab.count}
+                  size="small"
+                  sx={{
+                    ml: 1,
+                    height: '20px',
+                    fontSize: '0.72rem',
+                    fontWeight: 'bold',
+                    backgroundColor: isActive ? 'rgba(26, 26, 46, 0.3)' : 'rgba(255, 255, 255, 0.15)',
+                    color: isActive ? '#1a1a2e' : '#eeeeee',
+                  }}
+                />
+              </Button>
+            );
+          })}
+        </Box>
+
         <Box
           sx={{
             display: 'grid',
@@ -639,7 +860,7 @@ const Portfolio = () => {
             px: { xs: 2, md: 4 }
           }}
         >
-          {projects.map((project, index) => (
+          {(activeCategory === 'all' ? projects : projects.filter(p => p.category === activeCategory)).map((project, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -708,7 +929,7 @@ const Portfolio = () => {
                         border: '1px solid rgba(255, 255, 255, 0.2)',
                       }}
                     >
-                      🟢 Coming Soon — {project.comingSoonDate}
+                      🟢 Coming Soon{project.comingSoonDate ? ` — ${project.comingSoonDate}` : ''}
                     </Box>
                   )}
                   {project.isNextFestParticipant && (
@@ -806,6 +1027,26 @@ const Portfolio = () => {
                         <Launch />
                       </IconButton>
                     )}
+                    {project.youtubeVideoId && (
+                      <IconButton
+                        href={project.youtubeUrl || `https://youtu.be/${project.youtubeVideoId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Watch Video Demonstration"
+                        sx={{
+                          color: '#ff4b4b',
+                          backgroundColor: 'rgba(30, 41, 59, 0.8)',
+                          '&:hover': {
+                            transform: 'scale(1.1)',
+                            backgroundColor: 'rgba(255, 0, 0, 0.2)',
+                            color: '#ff0000'
+                          },
+                          transition: 'all 0.3s ease-in-out'
+                        }}
+                      >
+                        <YouTube />
+                      </IconButton>
+                    )}
                   </Box>
                 </Box>
                 <CardContent
@@ -827,8 +1068,20 @@ const Portfolio = () => {
                   >
                     {project.title}
                   </Typography>
-                  {project.isOfficiallyCredited && (
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1.5 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1.5, flexWrap: 'wrap', gap: 1 }}>
+                    <Chip
+                      label={getCategoryInfo(project.category).shortLabel}
+                      size="small"
+                      sx={{
+                        backgroundColor: getCategoryInfo(project.category).bg,
+                        color: getCategoryInfo(project.category).color,
+                        border: getCategoryInfo(project.category).border,
+                        fontSize: '0.72rem',
+                        fontWeight: 'bold',
+                        height: '22px'
+                      }}
+                    />
+                    {project.isOfficiallyCredited && (
                       <Chip
                         icon={<Star sx={{ color: '#ffd700 !important', fontSize: '0.9rem !important' }} />}
                         label="Officially Credited in Release"
@@ -845,8 +1098,8 @@ const Portfolio = () => {
                           }
                         }}
                       />
-                    </Box>
-                  )}
+                    )}
+                  </Box>
                   <Typography
                     variant="body2"
                     sx={{
@@ -995,9 +1248,25 @@ const Portfolio = () => {
             <DialogTitle sx={{
               color: '#4ecca3',
               borderBottom: '1px solid rgba(78, 204, 163, 0.2)',
-              pb: 2
+              pb: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: 1
             }}>
-              {selectedProject.modalTitle || selectedProject.title}
+              <span>{selectedProject.modalTitle || selectedProject.title}</span>
+              <Chip
+                label={getCategoryInfo(selectedProject.category).label}
+                size="small"
+                sx={{
+                  backgroundColor: getCategoryInfo(selectedProject.category).bg,
+                  color: getCategoryInfo(selectedProject.category).color,
+                  border: getCategoryInfo(selectedProject.category).border,
+                  fontSize: '0.78rem',
+                  fontWeight: 'bold',
+                }}
+              />
             </DialogTitle>
             <DialogContent>
               <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 3 }}>
@@ -1056,6 +1325,41 @@ const Portfolio = () => {
                         ))}
                       </ImageList>
                     </>
+                  )}
+
+                  {selectedProject.youtubeVideoId && (
+                    <Box sx={{ mb: 3 }}>
+                      <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2, display: 'flex', alignItems: 'center', gap: 1 }}>
+                        <PlayArrow sx={{ color: '#ff4b4b', fontSize: '1.4rem' }} /> Video Demonstration
+                      </Typography>
+                      <Box
+                        sx={{
+                          position: 'relative',
+                          paddingBottom: '56.25%', /* 16:9 Aspect Ratio */
+                          height: 0,
+                          overflow: 'hidden',
+                          borderRadius: 2,
+                          border: '1px solid rgba(78, 204, 163, 0.3)',
+                          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
+                          backgroundColor: '#000'
+                        }}
+                      >
+                        <iframe
+                          src={`https://www.youtube.com/embed/${selectedProject.youtubeVideoId}?rel=0`}
+                          title={`${selectedProject.title} Video Demonstration`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            border: 0
+                          }}
+                        />
+                      </Box>
+                    </Box>
                   )}
 
                   <Typography variant="h6" sx={{ color: '#4ecca3', mb: 2 }}>

@@ -11,13 +11,13 @@
 **Project Name:** Rotted – A Brain Rot Simulator
 
 **Card Description:**
-A dark-comedy survival roguelite where your attention is the only currency that matters. Swat roaches, dodge guilt trips from Mom, pay rent, and stack your Brain Rot meter to 100% — then do it again. Features a live global leaderboard and 33-language support. Releasing June 25, 2026 on Steam.
+A dark-comedy survival roguelite where your attention is the only currency that matters. Swat roaches, dodge guilt trips from Mom, pay rent, and stack your Brain Rot meter to 100% — then do it again. Features a live global leaderboard and 33-language support. Coming soon on Steam.
 
 **Tags:**
 - Unity | C# | Steam Achievements | Steam Cloud | Steam Leaderboards | Localization | Roguelite
 
 **Special Badges:**
-- 🟢 Coming Soon — Jun 25, 2026
+- 🟢 Coming Soon
 - 🎮 Steam Next Fest Participant
 - 🏅 Officially Credited in Release
 
@@ -32,7 +32,7 @@ A dark-comedy survival roguelite where your attention is the only currency that 
 **Project Title:** Rotted – A Brain Rot Simulator
 
 **About the Project:**
-Rotted is a satirical survival roguelite developed by Sector4Interactive, releasing on Steam on June 25, 2026 — and selected to participate in Steam Next Fest. Players scroll a tiered content feed to reach peak Brain Rot while real-life chaos interrupts: roaches multiply, rent texts get aggressive, Mom keeps calling, and chores pile up. Every run rewards upgrade picks from 40+ boons and 7 persistent upgrades, feeding into a live global leaderboard tracking every player's ascent worldwide. The game supports 33 languages across interface, audio, and subtitles.
+Rotted is a satirical survival roguelite developed by Sector4Interactive, coming soon to Steam — and selected to participate in Steam Next Fest. Players scroll a tiered content feed to reach peak Brain Rot while real-life chaos interrupts: roaches multiply, rent texts get aggressive, Mom keeps calling, and chores pile up. Every run rewards upgrade picks from 40+ boons and 7 persistent upgrades, feeding into a live global leaderboard tracking every player's ascent worldwide. The game supports 33 languages across interface, audio, and subtitles.
 
 **My Role & Contributions:**
 - Designed and implemented the Task/Chores system — the core real-life interruption mechanics that challenge players to balance responsibilities against their Brain Rot meter progression
@@ -55,7 +55,7 @@ Rotted is a satirical survival roguelite developed by Sector4Interactive, releas
 
 **Platform:** PC (Steam)
 
-**Release Date:** June 25, 2026
+**Release Date:** Coming Soon
 
 **Steam Next Fest:** ✅ Selected Participant
 

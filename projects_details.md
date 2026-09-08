@@ -1,31 +1,37 @@
 # Project Details
 
 This document contains information on the main portfolio page components and the modal popup details (About Project, Key Features, Technologies Used, and Platform) for the following projects:
+
 1. **Rotted – A Brain Rot Simulator**
 2. **The Curse 404**
 3. **Fast Gear**
 4. **Superdash - No Wifi Games**
 5. **Puzzle Odyssey**
+6. **Mazeflower Music App**
+7. **Facilig SafetyWhat Interactive Showcase**
 
 ---
 
 ## 1. Rotted – A Brain Rot Simulator
 
 ### Main Page Display
+
 - **Project Name**: Rotted – A Brain Rot Simulator
-- **Main Description**: A dark-comedy survival roguelite where your attention is the only currency that matters. Swat roaches, dodge guilt trips from Mom, pay rent, and stack your Brain Rot meter to 100% — then do it again. Features a live global leaderboard and 33-language support. Releasing June 25, 2026 on Steam.
+- **Main Description**: A dark-comedy survival roguelite where your attention is the only currency that matters. Swat roaches, dodge guilt trips from Mom, pay rent, and stack your Brain Rot meter to 100% - then do it again. Features a live global leaderboard and 33-language support. Coming soon on Steam.
 - **Main Tags**:
   - **Platform**: `PC (Steam)`
   - **Technologies**: `Unity`, `C#`, `Steam Achievements`, `Steam Cloud`, `Steam Leaderboards`, `Localization`, `Roguelite`
-  - **Special Badges**: `🟢 Coming Soon — Jun 25, 2026`, `🎮 Steam Next Fest Participant`, `🏅 Officially Credited in Release`
+  - **Special Badges**: `🟢 Coming Soon`, `🎮 Steam Next Fest Participant`, `🏅 Officially Credited in Release`
 
 ### Modal Popup Details
+
 - **About Project**:
+
   ```text
   Rotted – A Brain Rot Simulator
 
   Project Overview:
-  Rotted is a satirical survival roguelite developed by Sector4Interactive, releasing on Steam on June 25, 2026 — and selected to participate in Steam Next Fest. Players scroll a tiered content feed to reach peak Brain Rot while real-life chaos interrupts: roaches multiply, rent texts get aggressive, Mom keeps calling, and chores pile up. Every run rewards upgrade picks from 40+ boons and 7 persistent upgrades, feeding into a live global leaderboard tracking every player's ascent worldwide. The game supports 33 languages across interface, audio, and subtitles.
+  Rotted is a satirical survival roguelite developed by Sector4Interactive, coming soon to Steam — and selected to participate in Steam Next Fest. Players scroll a tiered content feed to reach peak Brain Rot while real-life chaos interrupts: roaches multiply, rent texts get aggressive, Mom keeps calling, and chores pile up. Every run rewards upgrade picks from 40+ boons and 7 persistent upgrades, feeding into a live global leaderboard tracking every player's ascent worldwide. The game supports 33 languages across interface, audio, and subtitles.
 
   My Role & Contributions:
   • Designed and implemented the Task/Chores system — the core real-life interruption mechanics that challenge players to balance responsibilities against their Brain Rot meter progression
@@ -54,33 +60,35 @@ This document contains information on the main portfolio page components and the
   • Roguelite Systems
   • Procedural Generation
   ```
+
 - **Key Features**:
-  * Survival roguelite with dark-comedy theme and satirical real-life interruptions
-  * 40+ boons and upgrades per run, with 7 persistent cross-run upgrades
-  * Live global leaderboard — real-time Brain Rot tracker across all players worldwide
-  * Steam Achievements, Steam Cloud Save, and Steam Leaderboards fully integrated
-  * 33 languages supported — one of the widest localization scopes for an indie title
-  * Procedurally structured runs with meaningful upgrade choices each loop
-  * Dark humor narrative with escalating difficulty and chain-loop replayability
+  - Survival roguelite with dark-comedy theme and satirical real-life interruptions
+  - 40+ boons and upgrades per run, with 7 persistent cross-run upgrades
+  - Live global leaderboard — real-time Brain Rot tracker across all players worldwide
+  - Steam Achievements, Steam Cloud Save, and Steam Leaderboards fully integrated
+  - 33 languages supported — one of the widest localization scopes for an indie title
+  - Procedurally structured runs with meaningful upgrade choices each loop
+  - Dark humor narrative with escalating difficulty and chain-loop replayability
 - **Technologies Used**:
-  * Unity
-  * C#
-  * Steam Achievements
-  * Steam Cloud
-  * Steam Leaderboards
-  * Steamworks SDK
-  * Localization
-  * Roguelite Systems
-  * Procedural Generation
+  - Unity
+  - C#
+  - Steam Achievements
+  - Steam Cloud
+  - Steam Leaderboards
+  - Steamworks SDK
+  - Localization
+  - Roguelite Systems
+  - Procedural Generation
 - **Platform**: `PC (Steam)`
 - **Store Links**:
-  * Steam: [Steam Store Page](https://store.steampowered.com/app/4474330/Rotted__A_Brain_Rot_Simulator/)
+  - Steam: [Steam Store Page](https://store.steampowered.com/app/4474330/Rotted__A_Brain_Rot_Simulator/)
 
 ---
 
 ## 2. The Curse 404
 
 ### Main Page Display
+
 - **Project Name**: The Curse 404
 - **Main Description**: A first-person psychological horror game built in Unity that focuses on atmosphere, tension, and player-driven fear. The game dynamically reacts to player behavior, increasing anxiety through environmental changes and unsettling narrative feedback.
 - **Main Tags**:
@@ -88,7 +96,9 @@ This document contains information on the main portfolio page components and the
   - **Technologies**: `Unity`, `C#`, `Unity Input System`, `TextMeshPro`, `Scriptable Architecture`, `Raycasting`, `Persistent Data`
 
 ### Modal Popup Details
+
 - **About Project**:
+
   ```text
   The Curse 404 - A Descent into Digital Madness
 
@@ -128,33 +138,35 @@ This document contains information on the main portfolio page components and the
   • Animation System
   • Persistent Data Save (Data Handling)
   ```
+
 - **Key Features**:
-  * Raycast-based modular interaction system
-  * Real-time anxiety tracking and adaptive gameplay
-  * Dynamic text system with sarcastic narrative feedback
-  * Atmospheric environmental changes driven by player actions
-  * Smooth UI/HUD transitions and interaction feedback
-  * Advanced scene management and game flow control
+  - Raycast-based modular interaction system
+  - Real-time anxiety tracking and adaptive gameplay
+  - Dynamic text system with sarcastic narrative feedback
+  - Atmospheric environmental changes driven by player actions
+  - Smooth UI/HUD transitions and interaction feedback
+  - Advanced scene management and game flow control
 - **Technologies Used**:
-  * Unity
-  * C#
-  * Unity Input System
-  * TextMeshPro
-  * Scriptable Architecture
-  * Raycasting
-  * Persistent Data
+  - Unity
+  - C#
+  - Unity Input System
+  - TextMeshPro
+  - Scriptable Architecture
+  - Raycasting
+  - Persistent Data
 - **Platform**: `PC / Windows, Console`
 - **Store Links**:
-  * Steam: [Steam Store Page](https://store.steampowered.com/app/4320820/The_Curse_404/)
-  * Epic Games Store: [Epic Games Page](https://store.epicgames.com/p/the-curse-404-41b724)
-  * Xbox: [Xbox Store Page](https://www.xbox.com/en-in/games/store/the-curse-404/9pm6r3trlz11)
-  * PlayStation: [PlayStation Store Page](https://store.playstation.com/en-in/product/EP8934-CUSA57814_00-0382593811541787)
+  - Steam: [Steam Store Page](https://store.steampowered.com/app/4320820/The_Curse_404/)
+  - Epic Games Store: [Epic Games Page](https://store.epicgames.com/p/the-curse-404-41b724)
+  - Xbox: [Xbox Store Page](https://www.xbox.com/en-in/games/store/the-curse-404/9pm6r3trlz11)
+  - PlayStation: [PlayStation Store Page](https://store.playstation.com/en-in/product/EP8934-CUSA57814_00-0382593811541787)
 
 ---
 
 ## 3. Fast Gear
 
 ### Main Page Display
+
 - **Project Name**: Fast Gear
 - **Main Description**: Fast Gear is a high-intensity 3D car racing game built for PC, offering both thrilling single-player challenges and competitive online multiplayer PvP action. Master realistic driving physics and race through dynamic tracks across cities, deserts, and forests. Race the World. Rule the Road.
 - **Main Tags**:
@@ -162,7 +174,9 @@ This document contains information on the main portfolio page components and the
   - **Technologies**: `Unity 3D`, `C#`, `Multiplayer Networking`, `Physics Simulation`, `AI Programming`, `3D Modeling`, `UI/UX Design`
 
 ### Modal Popup Details
+
 - **About Project**:
+
   ```text
   Fast Gear - Ultimate Racing Experience
 
@@ -180,35 +194,37 @@ This document contains information on the main portfolio page components and the
 
   "Race the World. Rule the Road."
   ```
+
 - **Key Features**:
-  * Single-player career and knockout modes
-  * Real-time online multiplayer PvP racing
-  * Wide variety of high-performance vehicles
-  * Diverse racing environments (cities, deserts, forests)
-  * Realistic driving physics and controls
-  * Smart and adaptive AI opponents
-  * Dynamic track designs across multiple locations
-  * Competitive online racing with players worldwide
+  - Single-player career and knockout modes
+  - Real-time online multiplayer PvP racing
+  - Wide variety of high-performance vehicles
+  - Diverse racing environments (cities, deserts, forests)
+  - Realistic driving physics and controls
+  - Smart and adaptive AI opponents
+  - Dynamic track designs across multiple locations
+  - Competitive online racing with players worldwide
 - **Technologies Used**:
-  * Unity 3D
-  * C#
-  * Multiplayer Networking
-  * Physics Simulation
-  * AI Programming
-  * 3D Modeling
-  * UI/UX Design
+  - Unity 3D
+  - C#
+  - Multiplayer Networking
+  - Physics Simulation
+  - AI Programming
+  - 3D Modeling
+  - UI/UX Design
 - **Platform**: `PC · Console`
 - **Store Links**:
-  * Steam: [Steam Store Page](https://store.steampowered.com/app/1282390/Fast_Gear/)
-  * Epic Games Store: [Epic Games Page](https://store.epicgames.com/p/fast-gear-454cd7)
-  * Xbox: [Xbox Store Page](https://www.xbox.com/en-IN/games/store/fast-gear/9PB6LNR98202/0010)
-  * PlayStation: [PlayStation Store Page](https://store.playstation.com/en-in/product/EP8934-CUSA53640_00-0253818994512950)
+  - Steam: [Steam Store Page](https://store.steampowered.com/app/1282390/Fast_Gear/)
+  - Epic Games Store: [Epic Games Page](https://store.epicgames.com/p/fast-gear-454cd7)
+  - Xbox: [Xbox Store Page](https://www.xbox.com/en-IN/games/store/fast-gear/9PB6LNR98202/0010)
+  - PlayStation: [PlayStation Store Page](https://store.playstation.com/en-in/product/EP8934-CUSA53640_00-0253818994512950)
 
 ---
 
 ## 4. Superdash - No Wifi Games
 
 ### Main Page Display
+
 - **Project Name**: Superdash - No Wifi Games
 - **Main Description**: Superdash Offline, a hyper-casual mobile game featuring vibrant visuals and intuitive swipe mechanics. The game incorporates engaging merge-and-match gameplay, utilizing Collider2D for smooth and seamless interactions. To keep players challenged, I created time-based puzzles with increasing difficulty, ensuring long-lasting engagement. I also optimized the game for offline play, allowing users to enjoy it without needing an internet connection. To enhance replayability and player retention, I implemented a star rating system that rewards performance, encouraging users to revisit and improve their scores.
 - **Main Tags**:
@@ -216,7 +232,9 @@ This document contains information on the main portfolio page components and the
   - **Technologies**: `Unity`, `C#`, `SQLite`, `2D Animation`, `Addressables`, `Collider2D`
 
 ### Modal Popup Details
+
 - **About Project**:
+
   ```text
   Overview of the Project:
   Designed with offline functionality in mind, Superdash No Wifi Game allows players to enjoy the game anytime, anywhere, without requiring an internet connection. Additionally, the introduction of a star rating system enhances replayability by rewarding performance and motivating players to improve their scores.
@@ -232,21 +250,22 @@ This document contains information on the main portfolio page components and the
   Time-Based Puzzle Design: Developed time-based challenges with progressively increasing difficulty to maintain user engagement.
   Hyper-Casual Game Design Principles: Deepened knowledge of hyper-casual game design, emphasizing simplicity, accessibility, and rapid engagement.
   ```
+
 - **Key Features**:
-  * Merge-and-match gameplay with addictive progression
-  * Precise collision detection using Collider2D
-  * Time-based puzzles with increasing difficulty
-  * Offline play – no internet required
-  * Star rating system for replayability and challenge
-  * Intuitive swipe and gesture controls
-  * Hyper-casual design for rapid engagement
+  - Merge-and-match gameplay with addictive progression
+  - Precise collision detection using Collider2D
+  - Time-based puzzles with increasing difficulty
+  - Offline play – no internet required
+  - Star rating system for replayability and challenge
+  - Intuitive swipe and gesture controls
+  - Hyper-casual design for rapid engagement
 - **Technologies Used**:
-  * Unity
-  * C#
-  * SQLite
-  * 2D Animation
-  * Addressables
-  * Collider2D
+  - Unity
+  - C#
+  - SQLite
+  - 2D Animation
+  - Addressables
+  - Collider2D
 - **Platform**: `Mobile`
 
 ---
@@ -254,6 +273,7 @@ This document contains information on the main portfolio page components and the
 ## 5. Puzzle Odyssey
 
 ### Main Page Display
+
 - **Project Name**: Puzzle Odyssey
 - **Main Description**: Puzzle Odyssey is an immersive word puzzle game that combines challenging gameplay with stunning visuals and relaxing soundscapes. Players can test their vocabulary, sharpen their minds, and unwind as they swipe through hidden words across beautiful landscapes. Designed for puzzle lovers seeking both fun and education, the game offers an engaging experience. I implemented Unity in-app purchases for both iOS and Android, used Line Renderer to form words from letters using colliders, and integrated in-app reviews to enhance user feedback on both platforms.
 - **Main Tags**:
@@ -261,7 +281,9 @@ This document contains information on the main portfolio page components and the
   - **Technologies**: `Unity`, `C#`, `Shader Graph`, `Cinemachine`, `Post Processing`, `Unity IAP`, `Line Renderer`, `Collider2D`, `PlayerPrefs`
 
 ### Modal Popup Details
+
 - **About Project**:
+
   ```text
   Overview of the Project:
   Puzzle Odyssey is a captivating word puzzle game that challenges players to discover hidden words by connecting letters across a grid. The game blends immersive gameplay with visually appealing landscapes and calming soundtracks, creating a relaxing yet mentally stimulating experience. It caters to puzzle enthusiasts who seek entertainment while enhancing their vocabulary and cognitive skills.
@@ -278,23 +300,178 @@ This document contains information on the main portfolio page components and the
   In-App Reviews Implementation: Integrated Google Play and App Store in-app review prompts to encourage user feedback.
   Persistent Data Management: Utilized PlayerPrefs to save user progress, game settings, and high scores across sessions.
   ```
+
 - **Key Features**:
-  * Challenging word puzzles with increasing difficulty levels
-  * Cross-platform availability on iOS and Android
-  * In-App Purchases (IAP) for hints and ad-free experience
-  * In-App Reviews integration for user feedback
-  * Word formation mechanics using Line Renderer and Collider2D
-  * Persistent data management with PlayerPrefs
-  * Immersive landscapes and calming soundtracks
-  * Vocabulary and cognitive skills enhancement
+  - Challenging word puzzles with increasing difficulty levels
+  - Cross-platform availability on iOS and Android
+  - In-App Purchases (IAP) for hints and ad-free experience
+  - In-App Reviews integration for user feedback
+  - Word formation mechanics using Line Renderer and Collider2D
+  - Persistent data management with PlayerPrefs
+  - Immersive landscapes and calming soundtracks
+  - Vocabulary and cognitive skills enhancement
 - **Technologies Used**:
-  * Unity
-  * C#
-  * Shader Graph
-  * Cinemachine
-  * Post Processing
-  * Unity IAP
-  * Line Renderer
-  * Collider2D
-  * PlayerPrefs
+  - Unity
+  - C#
+  - Shader Graph
+  - Cinemachine
+  - Post Processing
+  - Unity IAP
+  - Line Renderer
+  - Collider2D
+  - PlayerPrefs
 - **Platform**: `Mobile`
+
+---
+
+## 6. Mazeflower Music App
+
+### Main Page Display
+
+- **Project Name**: Mazeflower Music App
+- **Main Description**: A Unity-based interactive planet experience where users explore 3D planets and discover music & social content through interactive stickers. Features planetary navigation, spatial content placement, and persistent audio playback.
+- **Main Tags**:
+  - **Platform**: `Mobile (iOS & Android)`
+  - **Technologies**: `Unity 3D`, `C#`, `3D/Spatial UI`, `Audio Streaming`, `.m3u8/HLS`, `Mobile Touch Interaction`, `UI/UX`, `Performance & Debugging`
+
+### Modal Popup Details
+
+- **About Project**:
+
+  ```text
+  Mazeflower Music App - Interactive Planetary Music Experience
+
+  Project Overview:
+  A Unity-based interactive planet experience where users can explore 3D planets and discover music and social content through interactive stickers. The project combines planetary navigation, spatial content placement, and a persistent music playback system to create an immersive way to explore songs, artists, mixtapes, and planet anthems. Each user is represented as a dynamic globe.
+
+  My Role & Contributions:
+  • Developed interactive 3D planet navigation and pinch-to-zoom controls
+  • Implemented interactive stickers for songs, artists, mixtapes, and other content
+  • Built and refined a mini music player with persistent playback across planet and globe navigation
+  • Integrated .m3u8/HLS audio streaming into the playback system
+  • Implemented Planet Anthem playback and mini-player controls
+  • Improved sticker projection, positioning, scaling, resolution, and visual consistency across the planet surface
+  • Added visual differentiation between sticker types using custom borders and styling
+  • Fixed complex touch interaction, accidental playback, zoom, and navigation conflicts
+  • Improved sticker distribution across the planet to reduce clustering and visual clutter
+  • Performed extensive debugging, interaction testing, and stability improvements across the Planet experience
+
+  Key Features:
+  • Interactive 3D planet navigation and pinch-to-zoom controls
+  • Interactive stickers for songs, artists, mixtapes, and planet anthems
+  • Mini music player with persistent playback across planet & globe navigation
+  • Integrated .m3u8/HLS audio streaming into the playback system
+  • Sticker projection, positioning, scaling, and visual differentiation with custom borders
+  • Optimized touch interactions, resolving gesture & navigation conflicts
+  • Balanced sticker distribution across planetary surface to prevent visual clustering
+
+  Technical Stack:
+  • Unity
+  • C#
+  • 3D/Spatial UI
+  • Audio Streaming (.m3u8/HLS)
+  • Mobile Touch Interaction
+  • UI/UX Design
+  • Performance & Debugging
+  ```
+
+- **Key Features**:
+  - Interactive 3D planet navigation and pinch-to-zoom controls
+  - Interactive stickers for songs, artists, mixtapes, and planet anthems
+  - Mini music player with persistent playback across planet & globe navigation
+  - Integrated .m3u8/HLS audio streaming into the playback system
+  - Sticker projection, positioning, scaling, and visual differentiation with custom borders
+  - Optimized touch interactions, resolving gesture & navigation conflicts
+  - Balanced sticker distribution across planetary surface to prevent visual clustering
+- **Technologies Used**:
+  - Unity 3D
+  - C#
+  - 3D/Spatial UI
+  - Audio Streaming (.m3u8/HLS)
+  - Mobile Touch Interaction
+  - UI/UX Design
+  - Performance & Debugging
+- **Platform**: `Mobile (iOS & Android)`
+
+---
+
+## 7. Facilig SafetyWhat Interactive Showcase
+
+### Main Page Display
+
+- **Project Name**: Facilig SafetyWhat Showcase
+- **Main Description**: An interactive 3D demonstration application designed to showcase how the Facilig safety system works. Allows users to explore facility safety zones, trigger alert demonstrations, and switch between dynamic camera perspectives.
+- **Main Tags**:
+  - **Platform**: `PC (Windows)`
+  - **Technologies**: `Unity 3D`, `C#`, `Interactive 3D Demo`, `Multi-Camera Systems`, `Interactive UI/UX`, `System Simulation`, `Windows Desktop`
+  - **Category**: `⚡ Interactive & Simulation`
+- **Thumbnail Image**: `public/assets/facilig-safety/Thumbnail.png`
+
+### Modal Popup Details
+
+- **About Project**:
+
+  ```text
+  Facilig SafetyWhat — Interactive Safety System Showcase
+
+  Project Overview:
+  Facilig SafetyWhat is an interactive 3D demonstration and simulation application built in Unity for Windows desktop. The project was created to showcase how the Facilig safety and security system operates, providing an intuitive, hands-on way for clients and stakeholders to understand its monitoring workflows, camera perspectives, and alert capabilities.
+
+  Interactive Product Demonstration:
+  Rather than being a live operational surveillance tool, this application serves as an interactive product demonstration. Users can navigate an interactive facility environment, switch between multiple camera angles—including wide perimeter views, elevated vantage points, and localized CCTV cameras—and observe how the system visualizes active safety zones.
+
+  Simulated Safety Alert System:
+  To demonstrate incident handling, the application allows users to simulate safety alerts in real time. When a safety trigger occurs in a designated zone, the interface displays visual warning indicators on the operator HUD, enabling users to switch directly to the affected camera view and see how the Facilig safety system alerts personnel.
+
+  My Role & Contributions:
+  • Sole programmer for the entire project, developing the interactive showcase application from scratch in Unity and C#
+  • Designed and implemented the interactive user interface (UI) and demonstration workflow
+  • Engineered the multi-camera viewport switching system to provide dynamic perspective transitions
+  • Built the interactive safety alert demonstration mechanics and zone status visual indicators
+  • Optimized runtime performance and rendering for a smooth 60 FPS presentation on Windows desktop
+
+  Key Features:
+  • Interactive 3D demonstration illustrating how the Facilig safety system functions
+  • Multi-camera perspective switching showcasing facility coverage and camera angles
+  • Interactive safety alert demonstration visualizing simulated hazard triggers and incident states
+  • Intuitive presentation-ready operator HUD designed for client walkthroughs and demonstrations
+  • Zone-based status indicators displaying active, safe, and alert states in real time
+  • Standalone Windows desktop application optimized for smooth presentation and responsive user interaction
+
+  Technical Stack:
+  • Unity 3D (Game Engine)
+  • C# (Programming)
+  • Interactive 3D Demo
+  • Multi-Camera Systems
+  • Interactive UI/UX (Unity UI)
+  • System Simulation
+  • Windows Desktop Standalone
+  ```
+
+- **Key Features**:
+  - Interactive 3D demonstration illustrating how the Facilig safety system functions
+  - Multi-camera perspective switching showcasing facility coverage and camera angles
+  - Interactive safety alert demonstration visualizing simulated hazard triggers and incident states
+  - Intuitive presentation-ready operator HUD designed for client walkthroughs and demonstrations
+  - Zone-based status indicators displaying active, safe, and alert states in real time
+  - Standalone Windows desktop application optimized for smooth presentation and responsive user interaction
+- **My Role & Contributions**:
+  - Sole programmer for the entire project, developing the interactive showcase application from scratch in Unity and C#
+  - Designed and implemented the interactive user interface (UI) and demonstration workflow
+  - Engineered the multi-camera viewport switching system to provide dynamic perspective transitions
+  - Built the interactive safety alert demonstration mechanics and zone status visual indicators
+  - Optimized runtime performance and rendering for a smooth 60 FPS presentation on Windows desktop
+- **Technologies Used**:
+  - Unity 3D
+  - C#
+  - Interactive 3D Demo
+  - Multi-Camera Systems
+  - Interactive UI/UX
+  - System Simulation
+  - Windows Desktop
+- **Platform**: `PC (Windows)`
+- **Video Demonstration**:
+  - YouTube: [Watch Video Demo](https://youtu.be/DTXcwd1cXgc)
+
+
+

@@ -83,8 +83,8 @@ const Contact = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/assets/docs/AJITH_KUMAR_K_K_RESUME.pdf`;
-    link.download = 'AJITH_KUMAR_K_K_RESUME.pdf';
+    link.href = `${process.env.PUBLIC_URL}/assets/docs/AJITH_KUMAR_K_K.pdf`;
+    link.download = 'AJITH_KUMAR_K_K.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

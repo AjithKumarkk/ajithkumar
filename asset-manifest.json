@@ -1,19 +1,15 @@
 {
   "files": {
-    "main.css": "/ajithkumar/static/css/main.e6c13ad2.css",
-    "main.js": "/ajithkumar/static/js/main.6084b676.js",
+    "main.css": "/ajithkumar/static/css/main.0979d320.css",
+    "main.js": "/ajithkumar/static/js/main.e7253664.js",
     "static/js/453.9e70183b.chunk.js": "/ajithkumar/static/js/453.9e70183b.chunk.js",
-    "static/media/sqlserver.png": "/ajithkumar/static/media/sqlserver.76e5abffc5732f9b498e.png",
-    "static/media/profile.jpg": "/ajithkumar/static/media/profile.e208fb82c41aa75f46ad.jpg",
-    "static/media/UnrealEngine.png": "/ajithkumar/static/media/UnrealEngine.5e1e384bf90e3ec466c8.png",
-    "static/media/mysql.png": "/ajithkumar/static/media/mysql.cf1a78a5f42266d1d9a4.png",
     "index.html": "/ajithkumar/index.html",
-    "main.e6c13ad2.css.map": "/ajithkumar/static/css/main.e6c13ad2.css.map",
-    "main.6084b676.js.map": "/ajithkumar/static/js/main.6084b676.js.map",
+    "main.0979d320.css.map": "/ajithkumar/static/css/main.0979d320.css.map",
+    "main.e7253664.js.map": "/ajithkumar/static/js/main.e7253664.js.map",
     "453.9e70183b.chunk.js.map": "/ajithkumar/static/js/453.9e70183b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.6084b676.js"
+    "static/css/main.0979d320.css",
+    "static/js/main.e7253664.js"
   ]
 }
